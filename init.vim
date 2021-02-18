@@ -13,11 +13,25 @@ set smartcase
 set ruler
 set diffopt+=internal,indent-heuristic,algorithm:patience
 set showcmd
+set guifont=Hack:h14
+set clipboard^=unnamed,unnamedplus
+set showmode
+set mouse=a
+set tabstop=2
+set shiftwidth=4
+set expandtab
+set softtabstop=2
+set showmatch
+set incsearch
+set nobackup
+set autoread
+set wildmenu
+set wildmode=longest:list,full
 
 filetype plugin indent on
 syntax on
 
-set background=light
+set background=dark
 color space_vim_theme
 set termguicolors
 hi LineNr ctermbg=NONE guibg=NONE
