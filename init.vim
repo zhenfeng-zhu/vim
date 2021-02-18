@@ -1,3 +1,4 @@
+set number
 set noswapfile
 set encoding=utf-8
 set fileencodings=utf-8,gb18030
@@ -16,14 +17,17 @@ set showcmd
 filetype plugin indent on
 syntax on
 
+set background=light
+color space_vim_theme
 set termguicolors
-color tender
-highlight Visual guibg=#323232
-highlight Normal guibg=#000001
-highlight SignColumn guibg=#000001
-highlight StatusLine guibg=#444444 guifg=#b3deef
-highlight StatusLineTerm guibg=#444444 guifg=#b3deef
-highlight StatusLineTermNC guibg=#444444 guifg=#999999
+hi LineNr ctermbg=NONE guibg=NONE
+" color tender
+" highlight Visual guibg=#323232
+" highlight Normal guibg=#000001
+" highlight SignColumn guibg=#000001
+" highlight StatusLine guibg=#444444 guifg=#b3deef
+" highlight StatusLineTerm guibg=#444444 guifg=#b3deef
+" highlight StatusLineTermNC guibg=#444444 guifg=#999999
 
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
@@ -82,6 +86,7 @@ let g:deoplete#enable_at_startup = 1
 let g:go_fmt_command = 'goimports'
 let g:go_doc_popup_window = 1
 let g:go_rename_command = 'gopls'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 if !has('nvim')
 	packadd yarp
