@@ -27,6 +27,7 @@ set nobackup
 set autoread
 set wildmenu
 set wildmode=longest:list,full
+set nofoldenable
 
 filetype plugin indent on
 syntax on
