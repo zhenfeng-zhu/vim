@@ -39,7 +39,7 @@ color space_vim_theme
 
 
 " key map 
-nnoremap <silent> <c-u> :Mru<cr>
+nnoremap <silent> <c-m> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>

@@ -16,3 +16,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 :PlugUpdate
 ```
+
+特别感谢这篇文章：https://zhuanlan.zhihu.com/p/69725463
