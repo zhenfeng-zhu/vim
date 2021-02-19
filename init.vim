@@ -1,3 +1,4 @@
+" basic set
 set number
 set noswapfile
 set encoding=utf-8
@@ -13,7 +14,6 @@ set smartcase
 set ruler
 set diffopt+=internal,indent-heuristic,algorithm:patience
 set showcmd
-set guifont=Hack:h14
 set clipboard^=unnamed,unnamedplus
 set showmode
 set mouse=a
@@ -31,11 +31,14 @@ set wildmode=longest:list,full
 filetype plugin indent on
 syntax on
 
+
+" theme
+set termguicolors
 set background=dark
 color space_vim_theme
-set termguicolors
-hi LineNr ctermbg=NONE guibg=NONE
 
+
+" key map 
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
 nnoremap <silent> <leader>t :TagbarToggle<cr>
@@ -43,33 +46,11 @@ nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
 nnoremap <silent> <leader>c :call lv#Term()<cr>
 
-function! MyTabLabel(n)
-	let buflist = tabpagebuflist(a:n)
-	let winnr = tabpagewinnr(a:n)
-	let name = fnamemodify(bufname(buflist[winnr - 1]), ':t')
-	return empty(name) ? '[No Name]' : name
-endfunction
 
-function! MyTabLine()
-	let s = ''
-	for i in range(tabpagenr('$'))
-		if i + 1 == tabpagenr()
-			let s .= '%#TabLineSel#'
-		else
-			let s .= '%#TabLine#'
-		endif
-
-		let s .= ' '. (i+1) . ' '
-		let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-	endfor
-	return s
-endfunction
-set tabline=%!MyTabLine()
-
+" autocmd
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif
-
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd BufReadPost *.html,*.js,*.css,*.json,*.yaml call lv#ExpandTab(2)
 autocmd FileType proto call lv#ExpandTab(4)
@@ -77,8 +58,25 @@ autocmd FileType go setlocal formatoptions+=ro
 autocmd FileType go call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 autocmd FileType vim nnoremap <buffer> <c-]> :call vim#Jump()<cr>
 
+
+" custom cmd
 command -nargs=1 ExpandTab call lv#ExpandTab(<f-args>)
 
+
+" Plugs
+call plug#begin()
+Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mechatroner/rainbow_csv'
+call plug#end()
+
+if !has('nvim')
+	packadd yarp
+	packadd vim-hug-neovim-rpc
+end
+
+
+" plug settings
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeWinSize=24
@@ -94,17 +92,5 @@ let g:go_fmt_command = 'goimports'
 let g:go_doc_popup_window = 1
 let g:go_rename_command = 'gopls'
 let g:python3_host_prog = '/usr/local/bin/python3'
-
-if !has('nvim')
-	packadd yarp
-	packadd vim-hug-neovim-rpc
-end
-
-call plug#begin()
-Plug 'luochen1990/rainbow'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mechatroner/rainbow_csv'
-call plug#end()
-
 let g:rainbow_active=1
 
