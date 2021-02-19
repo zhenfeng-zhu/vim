@@ -73,3 +73,9 @@
 [submodule "pack/vendor/start/space-vim-theme"]
 	path = pack/vendor/start/space-vim-theme
 	url = https://github.com/liuchengxu/space-vim-theme.git
+[submodule "pack/vendor/start/vim-airline-themes"]
+	path = pack/vendor/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "pack/vendor/start/vim-airline"]
+	path = pack/vendor/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git

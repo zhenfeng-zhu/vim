@@ -35,13 +35,6 @@ set background=dark
 color space_vim_theme
 set termguicolors
 hi LineNr ctermbg=NONE guibg=NONE
-" color tender
-" highlight Visual guibg=#323232
-" highlight Normal guibg=#000001
-" highlight SignColumn guibg=#000001
-" highlight StatusLine guibg=#444444 guifg=#b3deef
-" highlight StatusLineTerm guibg=#444444 guifg=#b3deef
-" highlight StatusLineTermNC guibg=#444444 guifg=#999999
 
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
@@ -106,3 +99,12 @@ if !has('nvim')
 	packadd yarp
 	packadd vim-hug-neovim-rpc
 end
+
+call plug#begin()
+Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mechatroner/rainbow_csv'
+call plug#end()
+
+let g:rainbow_active=1
+
