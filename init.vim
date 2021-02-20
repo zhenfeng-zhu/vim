@@ -38,8 +38,6 @@ call plug#begin()
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mechatroner/rainbow_csv'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'lvht/mru'
 Plug 'preservim/tagbar'
@@ -50,6 +48,8 @@ Plug 'liuchengxu/nerdtree-dash'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'liuchengxu/eleline.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
