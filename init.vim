@@ -41,7 +41,7 @@ call plug#begin()
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mechatroner/rainbow_csv'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'liuchengxu/space-vim-theme'
 Plug 'lvht/mru'
 Plug 'preservim/tagbar'
 Plug 'preservim/nerdtree'
@@ -56,6 +56,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'elixir-editors/vim-elixir'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
 
 
@@ -70,10 +73,18 @@ nnoremap <silent> <Leader>q  :q<CR>
 nnoremap <silent> <Leader>Q  :qa!<CR>
 
 
+" autocmd
+autocmd FileType go setlocal formatoptions+=ro
+autocmd FileType go call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+
+
 " plug settings
 let g:rainbow_active=1
-
+let g:deoplete#enable_at_startup = 1
+let g:go_fmt_command = 'goimports'
+let g:go_rename_command = 'gopls'
 
 " theme
 set termguicolors
-colorscheme dracula
+set background=dark
+colorscheme space_vim_theme
