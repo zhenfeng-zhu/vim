@@ -39,30 +39,34 @@ syntax on
 
 " Plugs
 call plug#begin()
+" beautify
 Plug 'luochen1990/rainbow'
-Plug 'jiangmiao/auto-pairs'
 Plug 'mechatroner/rainbow_csv'
-Plug 'liuchengxu/space-vim-theme'
-Plug 'fatih/molokai'
-Plug 'lvht/mru'
 Plug 'preservim/tagbar'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'liuchengxu/nerdtree-dash'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'liuchengxu/eleline.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'elixir-editors/vim-elixir'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'lifepillar/vim-solarized8'
+
+" common coding
+Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'tpope/vim-fugitive'
+
+" language
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'plasticboy/vim-markdown'
+Plug 'elixir-editors/vim-elixir'
+
 call plug#end()
 
 
@@ -84,9 +88,8 @@ let g:go_rename_command = 'gopls'
 
 " theme
 set termguicolors
-set background=light
-colorscheme space_vim_theme
-" colorscheme molokai
+set background=dark
+autocmd vimenter * ++nested colorscheme solarized8
 
 
 " autocmd
