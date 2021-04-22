@@ -67,13 +67,11 @@ call plug#end()
 
 
 " key map 
-nnoremap <silent> <c-m> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
 nnoremap <silent> <leader>c :call lv#Term()<cr>
-nnoremap <silent> <Leader>i <Plug>IndentGuidesToggle
 nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>Q :qa!<CR>
@@ -84,7 +82,6 @@ let g:rainbow_active=1
 let g:deoplete#enable_at_startup = 1
 let g:go_fmt_command = 'goimports'
 let g:go_rename_command = 'gopls'
-let g:molokai_original = 1
 
 
 " theme
