@@ -36,6 +36,11 @@ set nofoldenable
 filetype plugin indent on
 syntax on
 
+if exists('$VIM_TERMINAL')
+    echoerr 'Do not run vim inside a vim terminal'
+    quit
+endif
+
 
 " Plugs
 call plug#begin()
@@ -77,7 +82,8 @@ nnoremap <silent> <leader>f :NERDTreeFind<cr>
 nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>Q :qa!<CR>
-
+tnoremap <Esc> <C-\><C-N>:q!<cr>
+nnoremap <silent> <leader>c :call lv#Term()<cr>
 
 " plug settings
 let g:rainbow_active=1

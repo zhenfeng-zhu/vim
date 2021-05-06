@@ -78,6 +78,7 @@ $RUNBENCH_SETTINGS	plugged/vim-go/scripts/runbench.vim	/^  let $RUNBENCH_SETTING
 <Plug>Markdown_OpenUrlUnderCursor	plugged/vim-markdown/ftplugin/markdown.vim	/^nnoremap <Plug>Markdown_OpenUrlUnderCursor :call <sid>OpenUrlUnderCursor()<cr>$/;"	m
 <SID>:	plugged/vim-fugitive/autoload/fugitive.vim	/^nnoremap <SID>: :<C-U><C-R>=v:count ? v:count : ''<CR>$/;"	m
 <SID>AutoPairsReturn	plugged/auto-pairs/plugin/auto-pairs.vim	/^inoremap <silent> <SID>AutoPairsReturn <C-R>=AutoPairsReturn()<CR>$/;"	m
+<leader>c	init.vim	/^nnoremap <silent> <leader>c :call lv#Term()<cr>$/;"	m
 <leader>e	init.vim	/^nnoremap <silent> <leader>e :NERDTreeToggle<cr>$/;"	m
 <leader>f	init.vim	/^nnoremap <silent> <leader>f :NERDTreeFind<cr>$/;"	m
 <leader>syn	plugged/vim-elixir/test.init.vim	/^map <leader>syn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'$/;"	m
@@ -282,6 +283,7 @@ ChooseCommandMap	plugged/tabular/plugin/Tabular.vim	/^function! s:ChooseCommandM
 CleanUp	plugged/vim-gutentags/plat/unix/update_scopedb.sh	/^CleanUp() {$/;"	f
 ClearHighlighting	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^    function! s:ClearHighlighting()$/;"	f
 CloseFold	plugged/tagbar/autoload/tagbar.vim	/^function! s:CloseFold() abort$/;"	f
+CloseTerm	autoload/lv.vim	/^function CloseTerm(...)$/;"	f
 CloseWindow	plugged/tagbar/autoload/tagbar.vim	/^function! s:CloseWindow() abort$/;"	f
 CommentBlock	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:CommentBlock(top, bottom, lSide, rSide, forceNested )$/;"	f
 CommentLines	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:CommentLines(forceNested, align, firstLine, lastLine)$/;"	f
@@ -3794,6 +3796,7 @@ lol	plugged/vim-elixir/spec/indent/blocks_spec.rb	/^    def lol do$/;"	f
 lpad	autoload/plug.vim	/^function! s:lpad(str, len)$/;"	f
 lspfactory.get	plugged/vim-go/autoload/go/lsp.vim	/^function! s:lspfactory.get() dict abort$/;"	f
 lspfactory.reset	plugged/vim-go/autoload/go/lsp.vim	/^function! s:lspfactory.reset() dict abort$/;"	f
+lv#Term	autoload/lv.vim	/^function! lv#Term()$/;"	f
 m	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^        var m = Math.floor(cur_aggr.length \/ 2);$/;"	v
 main	plugged/deoplete.nvim/autoload/deoplete/_main.py	/^def main(serveraddr):$/;"	f
 main	plugged/deoplete.nvim/rplugin/python3/deoplete/child.py	/^    def main(self, name: str, args: typing.List[typing.Any],$/;"	m	class:Child
