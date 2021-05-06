@@ -49,6 +49,7 @@ $RUNBENCH_SETTINGS	plugged/vim-go/scripts/runbench.vim	/^  let $RUNBENCH_SETTING
 <Plug>(go-doc-tab)	plugged/vim-go/ftplugin/go/mappings.vim	/^nnoremap <silent> <Plug>(go-doc-tab) :<C-u>call go#doc#Open("tabnew", "tabe")<CR>$/;"	m
 <Plug>(go-doc-vertical)	plugged/vim-go/ftplugin/go/mappings.vim	/^nnoremap <silent> <Plug>(go-doc-vertical) :<C-u>call go#doc#Open("vnew", "vsplit")<CR>$/;"	m
 <Plug>(go-files)	plugged/vim-go/ftplugin/go/mappings.vim	/^nnoremap <silent> <Plug>(go-files) :<C-u>call go#tool#Files()<CR>$/;"	m
+<Plug>(go-fmt)	plugged/vim-go/ftplugin/go/mappings.vim	/^nnoremap <silent> <Plug>(go-fmt) :<C-u>call go#fmt#Format(0)<CR>$/;"	m
 <Plug>(go-generate)	plugged/vim-go/ftplugin/go/mappings.vim	/^nnoremap <silent> <Plug>(go-generate) :<C-u>call go#cmd#Generate(!g:go_jump_to_error)<CR>$/;"	m
 <Plug>(go-iferr)	plugged/vim-go/ftplugin/go/mappings.vim	/^nnoremap <silent> <Plug>(go-iferr) :<C-u>call go#iferr#Generate()<CR>$/;"	m
 <Plug>(go-implements)	plugged/vim-go/ftplugin/go/mappings.vim	/^nnoremap <silent> <Plug>(go-implements) :<C-u>call go#implements#Implements(-1)<CR>$/;"	m
@@ -74,6 +75,33 @@ $RUNBENCH_SETTINGS	plugged/vim-go/scripts/runbench.vim	/^  let $RUNBENCH_SETTING
 <Plug>(go-vet)	plugged/vim-go/ftplugin/go/mappings.vim	/^nnoremap <silent> <Plug>(go-vet) :<C-u>call go#lint#Vet(!g:go_jump_to_error)<CR>$/;"	m
 <Plug>(go-whicherrs)	plugged/vim-go/ftplugin/go/mappings.vim	/^nnoremap <silent> <Plug>(go-whicherrs) :<C-u>call go#guru#Whicherrs(-1)<CR>$/;"	m
 <Plug>AutoPairsReturn	plugged/auto-pairs/plugin/auto-pairs.vim	/^imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn$/;"	m
+<Plug>Fireplace1MacroExpand	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>Fireplace1MacroExpand :<C-U>set opfunc=<SID>macroexpand1op<CR>g@$/;"	m
+<Plug>FireplaceCount1MacroExpand	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceCount1MacroExpand :<C-U>call <SID>macroexpand1op(v:count)<CR>$/;"	m
+<Plug>FireplaceCountEdit	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceCountEdit :<C-U>call <SID>editop(v:count)<CR>$/;"	m
+<Plug>FireplaceCountFilter	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceCountFilter :<C-U>call <SID>filterop(v:count)<CR>$/;"	m
+<Plug>FireplaceCountMacroExpand	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceCountMacroExpand  :<C-U>call <SID>macroexpandop(v:count)<CR>$/;"	m
+<Plug>FireplaceCountPrint	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceCountPrint  :<C-U>call <SID>printop(v:count)<CR>$/;"	m
+<Plug>FireplaceDjump	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceDjump :<C-U>exe <SID>Edit('edit', <SID>cword())<CR>$/;"	m
+<Plug>FireplaceDsplit	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceDsplit :<C-U>exe <SID>Edit('split', <SID>cword())<CR>$/;"	m
+<Plug>FireplaceDtabjump	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceDtabjump :<C-U>exe <SID>Edit('tabedit', <SID>cword())<CR>$/;"	m
+<Plug>FireplaceEdit	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceEdit   :<C-U>set opfunc=<SID>editop<CR>g@$/;"	m
+<Plug>FireplaceEditFile	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceEditFile    :<C-U>exe <SID>Find('find','edit')<CR>$/;"	m
+<Plug>FireplaceFilter	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceFilter :<C-U>set opfunc=<SID>filterop<CR>g@$/;"	m
+<Plug>FireplaceK	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <Plug>FireplaceK :<C-R>=<SID>K()<CR><CR>$/;"	m
+<Plug>FireplaceMacroExpand	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceMacroExpand  :<C-U>set opfunc=<SID>macroexpandop<CR>g@$/;"	m
+<Plug>FireplacePrint	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplacePrint  :<C-U>set opfunc=<SID>printop<CR>g@$/;"	m
+<Plug>FireplacePrintLast	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplacePrintLast :exe <SID>print_last()<CR>$/;"	m
+<Plug>FireplacePrompt	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap          <Plug>FireplacePrompt :exe <SID>inputeval()<CR>$/;"	m
+<Plug>FireplaceRecall	plugged/vim-fireplace/autoload/fireplace.vim	/^noremap!          <Plug>FireplaceRecall <C-R>=<SID>recall()<CR>$/;"	m
+<Plug>FireplaceSource	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <Plug>FireplaceSource :Source <C-R>=<SID>cword()<CR><CR>$/;"	m
+<Plug>FireplaceSplitFile	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceSplitFile   :<C-U>exe <SID>Find('sfind','split')<CR>$/;"	m
+<Plug>FireplaceStag	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceStag :<C-U>exe <SID>Tag('stag', <SID>cword())<CR>$/;"	m
+<Plug>FireplaceStjump	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceStjump :<C-U>exe <SID>Tag('stjump', <SID>cword())<CR>$/;"	m
+<Plug>FireplaceStselect	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceStselect :<C-U>exe <SID>Tag('stselect', <SID>cword())<CR>$/;"	m
+<Plug>FireplaceTabeditFile	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceTabeditFile :<C-U>exe <SID>Find('tabfind','tabedit')<CR>$/;"	m
+<Plug>FireplaceTag	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceTag :<C-U>exe <SID>Tag('tag', <SID>cword())<CR>$/;"	m
+<Plug>FireplaceTjump	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceTjump :<C-U>exe <SID>Tag('tjump', <SID>cword())<CR>$/;"	m
+<Plug>FireplaceTselect	plugged/vim-fireplace/autoload/fireplace.vim	/^nnoremap <silent> <Plug>FireplaceTselect :<C-U>exe <SID>Tag('tselect', <SID>cword())<CR>$/;"	m
 <Plug>Markdown_EditUrlUnderCursor	plugged/vim-markdown/ftplugin/markdown.vim	/^nnoremap <Plug>Markdown_EditUrlUnderCursor :call <sid>EditUrlUnderCursor()<cr>$/;"	m
 <Plug>Markdown_OpenUrlUnderCursor	plugged/vim-markdown/ftplugin/markdown.vim	/^nnoremap <Plug>Markdown_OpenUrlUnderCursor :call <sid>OpenUrlUnderCursor()<cr>$/;"	m
 <SID>:	plugged/vim-fugitive/autoload/fugitive.vim	/^nnoremap <SID>: :<C-U><C-R>=v:count ? v:count : ''<CR>$/;"	m
@@ -166,6 +194,7 @@ Base	plugged/deoplete.nvim/rplugin/python3/deoplete/source/member.py	/^from deop
 Base	plugged/deoplete.nvim/rplugin/python3/deoplete/source/omni.py	/^from deoplete.base.source import Base$/;"	i
 Base	plugged/vim-devicons/rplugin/python3/denite/filter/devicons_denite_converter.py	/^from .base import Base$/;"	i
 Base	plugged/vim-go/rplugin/python3/denite/source/decls.py	/^from .base import Base$/;"	i
+Benchmark	plugged/vim-clojure-static/clj/vim/test-runtime.vim	/^function! Benchmark(n, ...)$/;"	f
 BlameBufnr	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BlameBufnr(...) abort$/;"	f
 BlameCommit	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BlameCommit(cmd, ...) abort$/;"	f
 BlameCommitFileLnum	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:BlameCommitFileLnum(...) abort$/;"	f
@@ -282,6 +311,23 @@ ChompError	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ChompError(.
 ChooseCommandMap	plugged/tabular/plugin/Tabular.vim	/^function! s:ChooseCommandMap(commandline)$/;"	f
 CleanUp	plugged/vim-gutentags/plat/unix/update_scopedb.sh	/^CleanUp() {$/;"	f
 ClearHighlighting	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^    function! s:ClearHighlighting()$/;"	f
+CljBufferNs	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:CljBufferNs(...) dict abort$/;"	f
+CljEval	plugged/vim-fireplace/plugin/fireplace.vim	/^command! -bang -range -complete=customlist,fireplace#CljEvalComplete -nargs=* CljEval$/;"	c
+CljExt	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:CljExt() dict abort$/;"	f
+CljReplNs	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:CljReplNs() dict abort$/;"	f
+CljUserNs	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:CljUserNs() dict abort$/;"	f
+Cljfmt	plugged/vim-cljfmt/plugin/cljfmt.vim	/^command! Cljfmt call cljfmt#Format()$/;"	c
+CljfmtRange	plugged/vim-cljfmt/plugin/cljfmt.vim	/^command! -buffer -bang -range=0 -nargs=? CljfmtRange :exe s:CljfmtRange(<bang>0, <line1>, <line2>, <count>, <q-args>)$/;"	c
+CljfmtRange	plugged/vim-cljfmt/plugin/cljfmt.vim	/^function! s:CljfmtRange(bang, line1, line2, count, args) abort$/;"	f
+CljfmtRequire	plugged/vim-cljfmt/plugin/cljfmt.vim	/^command! CljfmtRequire call s:RequireCljfmt()$/;"	c
+Cljs	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:Cljs(...) abort$/;"	f
+CljsBufferNs	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:CljsBufferNs(...) dict abort$/;"	f
+CljsEval	plugged/vim-fireplace/plugin/fireplace.vim	/^command! -bang -range -complete=customlist,fireplace#CljsEvalComplete -nargs=* CljsEval$/;"	c
+CljsExt	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:CljsExt() dict abort$/;"	f
+CljsReplNs	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:CljsReplNs() dict abort$/;"	f
+CljsUserNs	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:CljsUserNs() dict abort$/;"	f
+ClojureHighlightReferences	plugged/vim-clojure-highlight/plugin/vim_clojure_highlight.vim	/^command! -bar ClojureHighlightReferences call s:syntax_match_references()$/;"	c
+ClojureSynIDNames	plugged/vim-clojure-static/clj/vim/test-runtime.vim	/^function! ClojureSynIDNames()$/;"	f
 CloseFold	plugged/tagbar/autoload/tagbar.vim	/^function! s:CloseFold() abort$/;"	f
 CloseTerm	autoload/lv.vim	/^function CloseTerm(...)$/;"	f
 CloseWindow	plugged/tagbar/autoload/tagbar.vim	/^function! s:CloseWindow() abort$/;"	f
@@ -305,6 +351,7 @@ CompleteRevision	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Comple
 CompleteSub	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:CompleteSub(subcommand, A, L, P, ...) abort$/;"	f
 CompleteTabularizeCommand	plugged/tabular/plugin/Tabular.vim	/^function! s:CompleteTabularizeCommand(argstart, cmdline, cursorpos)$/;"	f
 ConfigTimestamps	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ConfigTimestamps(dir, dict) abort$/;"	f
+Connection	plugged/vim-fireplace/pythonx/fireplace.py	/^class Connection:$/;"	c
 ConstGroupVerifier	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^class ConstGroupVerifier:$/;"	c
 ContainingCommit	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ContainingCommit() abort$/;"	f
 Context	plugged/deoplete.nvim/rplugin/python3/deoplete/__init__.py	/^Context = typing.Dict[str, typing.Any]$/;"	v
@@ -372,6 +419,7 @@ DisableStripWhitespaceOnSave	plugged/vim-better-whitespace/plugin/better-whitesp
 DisableStripWhitespaceOnSave	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^function! s:DisableStripWhitespaceOnSave()$/;"	f
 DisableWhitespace	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^command! DisableWhitespace call <SID>DisableWhitespace()$/;"	c
 DisableWhitespace	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^function! s:DisableWhitespace()$/;"	f
+DisplayWidth	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:DisplayWidth() abort$/;"	f
 Do	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Do(action, visual) abort$/;"	f
 DoAutocmd	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoAutocmd(cmd) abort$/;"	f
 DoAutocmdChanged	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoAutocmdChanged(dir) abort$/;"	f
@@ -401,14 +449,17 @@ DoUnstageUnpulled	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoUns
 DoUnstageUnpulledHeading	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoUnstageUnpulledHeading(heading) abort$/;"	f
 DoUnstageUnpushed	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoUnstageUnpushed(record) abort$/;"	f
 DoUnstageUnstaged	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DoUnstageUnstaged(record) abort$/;"	f
+Doc	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:Doc(symbol) abort$/;"	f
 DoesBlockHaveDelim	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:DoesBlockHaveDelim(delim, top, bottom)$/;"	f
 DoesBlockHaveMultipartDelim	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:DoesBlockHaveMultipartDelim(top, bottom)$/;"	f
 DoneParseArgs	plugged/vim-gutentags/plat/win32/update_scopedb.cmd	/^:DoneParseArgs$/;"	l
 DoneParseArgs	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^:DoneParseArgs$/;"	l
 DotRelative	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:DotRelative(path, ...) abort$/;"	f
+EDN	plugged/vim-clojure-static/clj/vim/test-runtime.vim	/^function! EDN(value)$/;"	f
 EPIPE	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^from errno import EPIPE$/;"	i
 EXCEPT	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^EXCEPT = 'EXCEPT'$/;"	v
 EchoExec	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:EchoExec(...) abort$/;"	f
+Edit	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:Edit(cmd, keyword) abort$/;"	f
 EditUrlUnderCursor	plugged/vim-markdown/ftplugin/markdown.vim	/^    function s:EditUrlUnderCursor()$/;"	f
 EexBuffer	plugged/vim-elixir/spec/spec_helper.rb	/^module EexBuffer$/;"	m	class:Differ
 ElelineBufnrWinnr	plugged/eleline.vim/plugin/eleline.vim	/^function! ElelineBufnrWinnr() abort$/;"	f
@@ -433,6 +484,8 @@ EnsurePythonInitialization	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^functi
 Error	plugged/vim-go/autoload/go/import.vim	/^function! s:Error(s) abort$/;"	f
 Esc	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:Esc(str)$/;"	f
 EscapeCtagsCmd	plugged/tagbar/autoload/tagbar.vim	/^function! s:EscapeCtagsCmd(ctags_bin, args, ...) abort$/;"	f
+Eval	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:Eval(type, line1, line2, range, bang, mods, args) abort$/;"	f
+EvalQuery	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:EvalQuery(...) dict abort$/;"	f
 Event.New	plugged/nerdtree/lib/nerdtree/event.vim	/^function! s:Event.New(nerdtree, subject, action, params) abort$/;"	f
 ExBuffer	plugged/vim-elixir/spec/spec_helper.rb	/^module ExBuffer$/;"	m	class:Differ
 ExecPath	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ExecPath() abort$/;"	f
@@ -481,7 +534,9 @@ Filter	plugged/deoplete.nvim/test/rplugin/python3/deoplete/test_matcher_fuzzy.py
 Filter	plugged/indentLine/after/plugin/indentLine.vim	/^function! s:Filter()$/;"	f
 Filter	plugged/vim-devicons/rplugin/python3/denite/filter/devicons_denite_converter.py	/^class Filter(Base):$/;"	c
 FilterEscape	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:FilterEscape(items, ...) abort$/;"	f
+FilterOutput	plugged/vim-cljfmt/plugin/cljfmt.vim	/^function! s:FilterOutput(lines, ...)$/;"	f
 FilterString	plugged/tabular/autoload/tabular.vim	/^function! s:FilterString(lines, commandstring)$/;"	f
+Find	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:Find(find, edit) abort$/;"	f
 FindBoundingLinesOfSexyCom	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:FindBoundingLinesOfSexyCom(lineNum)$/;"	f
 FindCornerOfSyntax	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:FindCornerOfSyntax(lnum, col, step)$/;"	f
 FindCornersOfSyntax	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:FindCornersOfSyntax(lnum, col)$/;"	f
@@ -490,6 +545,7 @@ FindLeftOfSyntax	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:FindLe
 FindNextSyntax	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:FindNextSyntax(lnum, col, name)$/;"	f
 FindParentVCSRoot	plugged/nerdtree/nerdtree_plugin/vcs.vim	/^function! s:FindParentVCSRoot(path)$/;"	f
 FindRightOfSyntax	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:FindRightOfSyntax(lnum, col)$/;"	f
+FireplaceConnect	plugged/vim-fireplace/plugin/fireplace.vim	/^command! -bar -bang -complete=customlist,fireplace#ConnectComplete -nargs=* FireplaceConnect$/;"	c
 FlagSet.New	plugged/nerdtree/lib/nerdtree/flag_set.vim	/^function! s:FlagSet.New()$/;"	f
 FlagSet._flagsForScope	plugged/nerdtree/lib/nerdtree/flag_set.vim	/^function! s:FlagSet._flagsForScope(scope)$/;"	f
 FlagSet.addFlag	plugged/nerdtree/lib/nerdtree/flag_set.vim	/^function! s:FlagSet.addFlag(scope, flag)$/;"	f
@@ -531,8 +587,11 @@ GF	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GF(mode) abort$/;"	f
 GROUP_BY	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^GROUP_BY = 'GROUP BY'$/;"	v
 GTabularize	plugged/tabular/plugin/Tabular.vim	/^   \\ GTabularize <line1>,<line2>$/;"	c
 Generate	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Generate(object, ...) abort$/;"	f
+GetClojureIndent	plugged/vim-clojure-static/indent/clojure.vim	/^	function! GetClojureIndent()$/;"	f
+GetCurrentBufferContents	plugged/vim-cljfmt/plugin/cljfmt.vim	/^function! s:GetCurrentBufferContents()$/;"	f
 GetEelixirIndent	plugged/vim-elixir/indent/eelixir.vim	/^function! GetEelixirIndent(...)$/;"	f
 GetFileWinnr	plugged/tagbar/autoload/tagbar.vim	/^function! s:GetFileWinnr(fileinfo) abort$/;"	f
+GetFormattedFile	plugged/vim-cljfmt/plugin/cljfmt.vim	/^function! s:GetFormattedFile()$/;"	f
 GetGoHTMLTmplIndent	plugged/vim-go/indent/gohtmltmpl.vim	/^function! GetGoHTMLTmplIndent(lnum)$/;"	f
 GetHeaderLevel	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:GetHeaderLevel(...)$/;"	f
 GetHeaderLineNum	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:GetHeaderLineNum(...)$/;"	f
@@ -543,6 +602,7 @@ GetNearbyTag	plugged/tagbar/autoload/tagbar.vim	/^function! s:GetNearbyTag(reque
 GetNextHeaderLineNumberAtLevel	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:GetNextHeaderLineNumberAtLevel(level, ...)$/;"	f
 GetParentHeaderLineNumber	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:GetParentHeaderLineNumber(...)$/;"	f
 GetPreviousHeaderLineNumberAtLevel	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:GetPreviousHeaderLineNumberAtLevel(level, ...)$/;"	f
+GetReformatString	plugged/vim-cljfmt/plugin/cljfmt.vim	/^function! s:GetReformatString(CurrentBufferContents)$/;"	f
 GetSexyComLeft	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:GetSexyComLeft(space, esc)$/;"	f
 GetSexyComMarker	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:GetSexyComMarker(space, esc)$/;"	f
 GetSexyComRight	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:GetSexyComRight(space, esc)$/;"	f
@@ -587,7 +647,7 @@ GoDrop	plugged/vim-go/ftplugin/go/commands.vim	/^command! -nargs=? -complete=cus
 GoErrCheck	plugged/vim-go/ftplugin/go/commands.vim	/^command! -nargs=* -bang -complete=customlist,go#package#Complete GoErrCheck call go#lint#Errcheck(<bang>0, <f-args>)$/;"	c
 GoFiles	plugged/vim-go/ftplugin/go/commands.vim	/^command! -nargs=* -complete=customlist,go#tool#ValidFiles GoFiles echo go#tool#Files(<f-args>)$/;"	c
 GoFillStruct	plugged/vim-go/ftplugin/go/commands.vim	/^command! -nargs=0 GoFillStruct call go#fillstruct#FillStruct()$/;"	c
-GoFmt	plugged/vim-go/ftplugin/go/commands.vim	/^command! -nargs=0 GoFmt call go#fmt#Format(-1)$/;"	c
+GoFmt	plugged/vim-go/ftplugin/go/commands.vim	/^command! -nargs=0 GoFmt call go#fmt#Format(0)$/;"	c
 GoFmtAutoSaveToggle	plugged/vim-go/ftplugin/go/commands.vim	/^command! -nargs=0 GoFmtAutoSaveToggle call go#fmt#ToggleFmtAutoSave()$/;"	c
 GoFreevars	plugged/vim-go/ftplugin/go/commands.vim	/^  command! -range=% GoFreevars call go#guru#Freevars(<count>)$/;"	c
 GoGenerate	plugged/vim-go/ftplugin/go/commands.vim	/^command! -nargs=* -bang GoGenerate call go#cmd#Generate(<bang>0,<f-args>)$/;"	c
@@ -666,6 +726,7 @@ HtmlHiLink	plugged/vim-markdown/syntax/markdown.vim	/^  command! -nargs=+ HtmlHi
 INDEX_WHOLE_PROJECT	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^        set INDEX_WHOLE_PROJECT=0$/;"	v
 INDEX_WHOLE_PROJECT	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^set INDEX_WHOLE_PROJECT=1$/;"	v
 INNER_JOIN	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^INNER_JOIN = 'INNER JOIN'$/;"	v
+IndentFile	plugged/vim-clojure-static/clj/vim/test-runtime.vim	/^function! IndentFile()$/;"	f
 IndentLinesDisable	plugged/indentLine/after/plugin/indentLine.vim	/^    command! -bar IndentLinesDisable call s:IndentLinesDisable()$/;"	c
 IndentLinesDisable	plugged/indentLine/after/plugin/indentLine.vim	/^    command! -bar IndentLinesDisable let b:indentLine_enabled = 0 | call s:IndentLinesDisable()$/;"	c
 IndentLinesDisable	plugged/indentLine/after/plugin/indentLine.vim	/^function! s:IndentLinesDisable()$/;"	f
@@ -714,6 +775,7 @@ Job.onSuccess	plugged/nerdtree-git-plugin/autoload/gitstatus/job.vim	/^function!
 Job.run	plugged/nerdtree-git-plugin/autoload/gitstatus/job.vim	/^    function! s:Job.run(cmd) abort$/;"	f
 JobOpts	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:JobOpts(cmd, env) abort$/;"	f
 JumpToTag	plugged/tagbar/autoload/tagbar.vim	/^function! s:JumpToTag(stay_in_tagbar) abort$/;"	f
+K	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:K() abort$/;"	f
 K	plugged/vim-go/ftplugin/go.vim	/^  nnoremap <buffer> <silent> K :GoDoc<cr>$/;"	m
 KeyMap.Add	plugged/nerdtree/lib/nerdtree/key_map.vim	/^function! s:KeyMap.Add(keymap)$/;"	f
 KeyMap.All	plugged/nerdtree/lib/nerdtree/key_map.vim	/^function! s:KeyMap.All()$/;"	f
@@ -737,6 +799,7 @@ LOG_FILE	plugged/vim-gutentags/plat/win32/update_scopedb.cmd	/^set LOG_FILE=$/;"
 LOG_FILE	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^    set LOG_FILE=%~2$/;"	v
 LOG_FILE	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^if [%LOG_FILE%]==[] set LOG_FILE=CON$/;"	v
 LOG_FILE	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^set LOG_FILE=$/;"	v
+Last	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:Last(bang, count) abort$/;"	f
 LastIndexOfDelim	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:LastIndexOfDelim(delim, str)$/;"	f
 LeadingSpaceDisable	plugged/indentLine/after/plugin/indentLine.vim	/^    command! -bar LeadingSpaceDisable call s:LeadingSpaceDisable()$/;"	c
 LeadingSpaceDisable	plugged/indentLine/after/plugin/indentLine.vim	/^    command! -bar LeadingSpaceDisable let b:indentLine_leadingSpaceEnabled = 0 | call s:LeadingSpaceDisable()$/;"	c
@@ -773,6 +836,7 @@ Logger.warning	plugged/nerdtree-git-plugin/autoload/gitstatus/log.vim	/^function
 LoggingMixin	plugged/deoplete.nvim/rplugin/python3/deoplete/base/filter.py	/^from deoplete.logger import LoggingMixin$/;"	i
 LoggingMixin	plugged/deoplete.nvim/rplugin/python3/deoplete/base/source.py	/^from deoplete.logger import LoggingMixin$/;"	i
 LoggingMixin	plugged/deoplete.nvim/rplugin/python3/deoplete/logger.py	/^class LoggingMixin(object):$/;"	c
+Lookup	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:Lookup(ns, macro, arg) abort$/;"	f
 LoopParseArgs	plugged/vim-gutentags/plat/win32/update_scopedb.cmd	/^:LoopParseArgs$/;"	l
 LoopParseArgs	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^:LoopParseArgs$/;"	l
 MAX	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^function MAX(val) {$/;"	f
@@ -894,6 +958,7 @@ NERDTreeSystemCommand	plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! N
 NERDTreeToggleVCS	plugged/nerdtree/nerdtree_plugin/vcs.vim	/^command! -n=? -complete=dir -bar NERDTreeToggleVCS :call <SID>ToggleTabTreeVCS('<args>')$/;"	c
 NERDTreeVCS	plugged/nerdtree/nerdtree_plugin/vcs.vim	/^command! -n=? -complete=dir -bar NERDTreeVCS :call <SID>CreateTabTreeVCS('<args>')$/;"	c
 NERDTreeWebDevIconsRefreshListener	plugged/vim-devicons/plugin/webdevicons.vim	/^function! NERDTreeWebDevIconsRefreshListener(event)$/;"	f
+NativeDelegate	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:NativeDelegate(func, ...) dict abort$/;"	f
 NavigateUp	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:NavigateUp(count) abort$/;"	f
 NerdEcho	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:NerdEcho(msg, typeOfMsg)$/;"	f
 Nested	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:Nested()$/;"	f
@@ -906,6 +971,7 @@ NextSectionEnd	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:NextSect
 NextTrailingWhitespace	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^command! -range=% NextTrailingWhitespace call <SID>GotoTrailingWhitespace(0, <line1>, <line2>)$/;"	c
 NoRainbowComment	plugged/rainbow_csv/plugin/rainbow_csv.vim	/^command! NoRainbowComment call rainbow_csv#manual_disable_comment_prefix()$/;"	c
 NoRainbowDelim	plugged/rainbow_csv/plugin/rainbow_csv.vim	/^command! NoRainbowDelim call rainbow_csv#manual_disable()$/;"	c
+NormalizeNs	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:NormalizeNs(client, payload) abort$/;"	f
 Notifier.AddListener	plugged/nerdtree/lib/nerdtree/notifier.vim	/^function! s:Notifier.AddListener(event, funcname)$/;"	f
 Notifier.GetListenersForEvent	plugged/nerdtree/lib/nerdtree/notifier.vim	/^function! s:Notifier.GetListenersForEvent(name)$/;"	f
 Notifier.GetListenersMap	plugged/nerdtree/lib/nerdtree/notifier.vim	/^function! s:Notifier.GetListenersMap()$/;"	f
@@ -1044,6 +1110,7 @@ Path.strTrunk	plugged/nerdtree/lib/nerdtree/path.vim	/^function! s:Path.strTrunk
 Path.tabnr	plugged/nerdtree/lib/nerdtree/path.vim	/^function! s:Path.tabnr()$/;"	f
 PathInfo	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PathInfo(url) abort$/;"	f
 PlaceDelimitersAndInsBetween	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:PlaceDelimitersAndInsBetween()$/;"	f
+PlatformDelegate	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:PlatformDelegate(func, ...) dict abort$/;"	f
 PreparePathArgs	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PreparePathArgs(cmd, dir, literal) abort$/;"	f
 PrevNonBlank	plugged/vim-markdown/indent/markdown.vim	/^function! s:PrevNonBlank(lnum)$/;"	f
 PrevTrailingWhitespace	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^command! -range=% PrevTrailingWhitespace call <SID>GotoTrailingWhitespace(1, <line1>, <line2>)$/;"	c
@@ -1120,6 +1187,8 @@ ReplaceCmd	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ReplaceCmd(c
 ReplaceDelims	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:ReplaceDelims(toReplace1, toReplace2, replacor1, replacor2, str)$/;"	f
 ReplaceLeftMostDelim	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:ReplaceLeftMostDelim(toReplace, replacor, str)$/;"	f
 ReplaceRightMostDelim	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:ReplaceRightMostDelim(toReplace, replacor, str)$/;"	f
+Require	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:Require(bang, echo, ns) abort$/;"	f
+RequireCljfmt	plugged/vim-cljfmt/plugin/cljfmt.vim	/^function! s:RequireCljfmt()$/;"	f
 ResetConcealOption	plugged/indentLine/after/plugin/indentLine.vim	/^function! s:ResetConcealOption()$/;"	f
 ResetWidth	plugged/indentLine/after/plugin/indentLine.vim	/^function! s:ResetWidth(...)$/;"	f
 Resolve	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Resolve(path) abort$/;"	f
@@ -1141,6 +1210,7 @@ RunJobs	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RunJobs() abort
 RunReceive	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RunReceive(state, tmp, type, job, data, ...) abort$/;"	f
 RunSave	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RunSave(state) abort$/;"	f
 RunSend	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RunSend(job, str) abort$/;"	f
+RunTests	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:RunTests(bang, count, ...) abort$/;"	f
 RunTick	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RunTick(job) abort$/;"	f
 RunUnitTests	plugged/rainbow_csv/test/unit_lib.vim	/^func! RunUnitTests()$/;"	f
 RunWait	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:RunWait(state, tmp, job, ...) abort$/;"	f
@@ -1192,6 +1262,8 @@ Source	plugged/deoplete.nvim/rplugin/python3/deoplete/source/omni.py	/^class Sou
 Source	plugged/vim-go/rplugin/python3/denite/source/decls.py	/^class Source(Base):$/;"	c
 SourceInitError	plugged/deoplete.nvim/rplugin/python3/deoplete/child.py	/^from deoplete.exceptions import SourceInitError$/;"	i
 SourceInitError	plugged/deoplete.nvim/rplugin/python3/deoplete/exceptions.py	/^class SourceInitError(Exception):$/;"	c
+SpecExample	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:SpecExample(kw) abort$/;"	f
+SpecForm	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:SpecForm(kw) abort$/;"	f
 SplitCDeclarations	plugged/tabular/after/plugin/TabularMaps.vim	/^function! SplitCDeclarations(lines)$/;"	f
 SplitCommands	plugged/tabular/plugin/Tabular.vim	/^function! s:SplitCommands(string)$/;"	f
 SplitDelim	plugged/tabular/autoload/tabular.vim	/^function! s:SplitDelim(string, delim)$/;"	f
@@ -1200,6 +1272,7 @@ SplitExpandChain	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:SplitE
 SqliteDbRegistry	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^class SqliteDbRegistry(rbql_engine.RBQLTableRegistry):$/;"	c
 SqliteRecordIterator	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^class SqliteRecordIterator(rbql_engine.RBQLInputIterator):$/;"	c
 SquashArgument	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:SquashArgument(...) abort$/;"	f
+StacktraceCommand	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:StacktraceCommand(bang, args) abort$/;"	f
 StageApply	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageApply(info, reverse, extra) abort$/;"	f
 StageArgs	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageArgs(visual) abort$/;"	f
 StageDelete	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:StageDelete(lnum1, lnum2, count) abort$/;"	f
@@ -1255,6 +1328,7 @@ TableWriter	plugged/rainbow_csv/rbql_core/rbql/__init__.py	/^from .rbql_engine i
 TableWriter	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^class TableWriter(RBQLOutputWriter):$/;"	c
 Tabularize	plugged/tabular/plugin/Tabular.vim	/^   \\ Tabularize <line1>,<line2>call Tabularize(<q-args>)$/;"	c
 Tabularize	plugged/tabular/plugin/Tabular.vim	/^function! Tabularize(command, ...) range$/;"	f
+Tag	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:Tag(cmd, keyword) abort$/;"	f
 Tagbar	plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 Tagbar              call tagbar#ToggleWindow()$/;"	c
 TagbarBalloonExpr	plugged/tagbar/autoload/tagbar.vim	/^function! TagbarBalloonExpr() abort$/;"	f
 TagbarBufName	plugged/tagbar/autoload/tagbar.vim	/^function! s:TagbarBufName() abort$/;"	f
@@ -1398,6 +1472,7 @@ Test_zero_as_slice_index	plugged/vim-go/autoload/go/highlight_test.vim	/^functio
 Test_zero_as_start_slicing_slice	plugged/vim-go/autoload/go/highlight_test.vim	/^function! Test_zero_as_start_slicing_slice() abort$/;"	f
 ThreadedTCPServer	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):$/;"	c
 ThreadedUnixServer	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^                             socketserver.UnixStreamServer):$/;"	c	class:ThreadedTCPServer
+Time	plugged/vim-clojure-static/clj/vim/test-runtime.vim	/^function! Time(n, expr)$/;"	f
 Toc	plugged/vim-markdown/ftplugin/markdown.vim	/^command! -buffer Toc call s:Toc()$/;"	c
 Toc	plugged/vim-markdown/ftplugin/markdown.vim	/^function! s:Toc(...)$/;"	f
 Toch	plugged/vim-markdown/ftplugin/markdown.vim	/^command! -buffer Toch call s:Toc('horizontal')$/;"	c
@@ -1405,6 +1480,7 @@ Toct	plugged/vim-markdown/ftplugin/markdown.vim	/^command! -buffer Toct call s:T
 Tocv	plugged/vim-markdown/ftplugin/markdown.vim	/^command! -buffer Tocv call s:Toc('vertical')$/;"	c
 ToggleAutoclose	plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleAutoclose() abort$/;"	f
 ToggleCaseInsensitive	plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleCaseInsensitive() abort$/;"	f
+ToggleClojureHighlightReferences	plugged/vim-clojure-highlight/plugin/vim_clojure_highlight.vim	/^command! -bar ToggleClojureHighlightReferences call s:toggle_clojure_highlight_references()$/;"	c
 ToggleFold	plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleFold() abort$/;"	f
 ToggleHelp	plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleHelp() abort$/;"	f
 ToggleHideNonPublicTags	plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleHideNonPublicTags() abort$/;"	f
@@ -1493,6 +1569,7 @@ TreeFileNode.renderToString	plugged/nerdtree/lib/nerdtree/tree_file_node.vim	/^f
 TreeInfo	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:TreeInfo(dir, commit) abort$/;"	f
 Trim	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^    function! s:Trim(s)$/;"	f
 TrimTrailingWhitespace	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^function s:TrimTrailingWhitespace(line)$/;"	f
+TypeKeys	plugged/vim-clojure-static/clj/vim/test-runtime.vim	/^function! TypeKeys(keys)$/;"	f
 UI.IndentWid	plugged/nerdtree/lib/nerdtree/ui.vim	/^function! s:UI.IndentWid()$/;"	f
 UI.MarkupReg	plugged/nerdtree/lib/nerdtree/ui.vim	/^function! s:UI.MarkupReg()$/;"	f
 UI.New	plugged/nerdtree/lib/nerdtree/ui.vim	/^function! s:UI.New(nerdtree)$/;"	f
@@ -1630,7 +1707,7 @@ _Base	plugged/deoplete.nvim/rplugin/python3/deoplete/source/base.py	/^from deopl
 _Parent	plugged/deoplete.nvim/rplugin/python3/deoplete/parent.py	/^class _Parent(logger.LoggingMixin):$/;"	c
 __getitem__	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^    def __getitem__(self, key):$/;"	m	class:RBQLRecord	file:
 __init__	plugged/deoplete.nvim/autoload/deoplete/_main.py	/^    def __init__(self, handler):$/;"	m	class:RedirectStream
-__init__	plugged/deoplete.nvim/rplugin/python3/deoplete/__init__.py	/^        def __init__(self, vim: Nvim):$/;"	m	class:DeopleteHandlers
+__init__	plugged/deoplete.nvim/rplugin/python3/deoplete/__init__.py	/^        def __init__(self, _vim: Nvim):$/;"	m	class:DeopleteHandlers
 __init__	plugged/deoplete.nvim/rplugin/python3/deoplete/base/filter.py	/^    def __init__(self, vim: Nvim) -> None:$/;"	m	class:Base
 __init__	plugged/deoplete.nvim/rplugin/python3/deoplete/base/source.py	/^    def __init__(self, vim: Nvim) -> None:$/;"	m	class:Base
 __init__	plugged/deoplete.nvim/rplugin/python3/deoplete/child.py	/^    def __init__(self, vim: Nvim) -> None:$/;"	m	class:Child
@@ -1701,6 +1778,7 @@ __init__	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^    def __init__(se
 __init__	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^    def __init__(self):$/;"	m	class:CLIVimMediator
 __init__	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^    def __init__(self):$/;"	m	class:VimInterface
 __init__	plugged/vim-devicons/rplugin/python3/denite/filter/devicons_denite_converter.py	/^	def __init__(self, vim):$/;"	m	class:Filter
+__init__	plugged/vim-fireplace/pythonx/fireplace.py	/^    def __init__(self, host, port, keepalive_file=None):$/;"	m	class:Connection
 __init__	plugged/vim-go/rplugin/python3/denite/source/decls.py	/^    def __init__(self, vim):$/;"	m	class:Source
 __init__	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^    def __init__(self, sock):$/;"	m	class:SocketToStream
 __setitem__	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^    def __setitem__(self, key, value):$/;"	m	class:RBQLRecord	file:
@@ -1776,6 +1854,7 @@ _use_previous_result	plugged/deoplete.nvim/rplugin/python3/deoplete/child.py	/^ 
 _version	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^from . import _version$/;"	i
 _write	plugged/deoplete.nvim/rplugin/python3/deoplete/child.py	/^    def _write(self, stdout: typing.Any, expr: typing.Any) -> None:$/;"	m	class:Child
 _write_all	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^    def _write_all(self, table):$/;"	m	class:CSVWriter
+abort_with_help	plugged/vim-clojure-static/clj/bin/syntime	/^abort_with_help() {$/;"	f
 absolute_import	plugged/vim-devicons/pythonx/vim_devicons/powerline/segments.py	/^from __future__ import (unicode_literals, division, absolute_import, print_function)$/;"	i
 abstractmethod	plugged/deoplete.nvim/rplugin/python3/deoplete/base/filter.py	/^from abc import abstractmethod$/;"	i
 abstractmethod	plugged/deoplete.nvim/rplugin/python3/deoplete/base/source.py	/^from abc import abstractmethod$/;"	i
@@ -1785,12 +1864,14 @@ activateAll	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:activat
 activateBookmark	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:activateBookmark(bm) abort$/;"	f
 activateDirNode	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:activateDirNode(directoryNode, ...) abort$/;"	f
 activateFileNode	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:activateFileNode(node) abort$/;"	f
+actually_input	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:actually_input(...) abort$/;"	f
 addChild	plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:addChild(tag) abort dict$/;"	f
 addTag	plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:addTag(tag) abort dict$/;"	f
 add_db	plugged/vim-gutentags/autoload/gutentags/gtags_cscope.vim	/^function! s:add_db(db_file) abort$/;"	f
 add_filter	plugged/deoplete.nvim/rplugin/python3/deoplete/parent.py	/^    def add_filter(self, path: str) -> None:$/;"	m	class:_Parent
 add_highlight	plugged/nerdtree-dash/syntax/nerdtree.vim	/^function! s:add_highlight() abort$/;"	f
 add_methods	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:add_methods(namespace, method_names) abort$/;"	f
+add_pprint_opts	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:add_pprint_opts(msg, width) abort$/;"	f
 add_snr	plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:add_snr(funcname) abort$/;"	f
 add_snr	plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:add_snr(funcname) abort$/;"	f
 add_snr	plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:add_snr(funcname) abort$/;"	f
@@ -1838,7 +1919,9 @@ avg_val	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^        var avg_val = cu
 await	plugged/vim-go/autoload/go/promise.vim	/^function! s:await(timeout, default) dict$/;"	f
 b:block_begin	plugged/vim-elixir/ftplugin/elixir.vim	/^let b:block_begin = '\\<\\(do$\\|fn\\>\\)'$/;"	v
 b:block_end	plugged/vim-elixir/ftplugin/elixir.vim	/^let b:block_end = '\\<end\\>'$/;"	v
+b:browsefilter	plugged/vim-clojure-static/ftplugin/clojure.vim	/^	let b:browsefilter = "Clojure Source Files (*.clj)\\t*.clj\\n" .$/;"	v
 b:current_syntax	plugged/tagbar/syntax/tagbar.vim	/^let b:current_syntax = 'tagbar'$/;"	v
+b:current_syntax	plugged/vim-clojure-static/syntax/clojure.vim	/^let b:current_syntax = "clojure"$/;"	v
 b:current_syntax	plugged/vim-elixir/syntax/eelixir.vim	/^let b:current_syntax = 'eelixir'$/;"	v
 b:current_syntax	plugged/vim-elixir/syntax/elixir.vim	/^let b:current_syntax = "elixir"$/;"	v
 b:current_syntax	plugged/vim-fugitive/syntax/fugitive.vim	/^let b:current_syntax = "fugitive"$/;"	v
@@ -1854,12 +1937,14 @@ b:current_syntax	plugged/vim-go/syntax/gosum.vim	/^let b:current_syntax = "gomod
 b:current_syntax	plugged/vim-go/syntax/gotexttmpl.vim	/^let b:current_syntax = "gotexttmpl"$/;"	v
 b:current_syntax	plugged/vim-go/syntax/vimgo.vim	/^let b:current_syntax = "vimgo"$/;"	v
 b:current_syntax	plugged/vim-markdown/syntax/markdown.vim	/^let b:current_syntax = "mkd"$/;"	v
+b:did_ftplugin	plugged/vim-clojure-static/ftplugin/clojure.vim	/^let b:did_ftplugin = 1$/;"	v
 b:did_ftplugin	plugged/vim-elixir/ftplugin/eelixir.vim	/^let b:did_ftplugin = 1$/;"	v
 b:did_ftplugin	plugged/vim-elixir/ftplugin/elixir.vim	/^let b:did_ftplugin = 1$/;"	v
 b:did_ftplugin	plugged/vim-fugitive/ftplugin/fugitiveblame.vim	/^let b:did_ftplugin = 1$/;"	v
 b:did_ftplugin	plugged/vim-go/ftplugin/asm.vim	/^let b:did_ftplugin = 1$/;"	v
 b:did_ftplugin	plugged/vim-go/ftplugin/go.vim	/^let b:did_ftplugin = 1$/;"	v
 b:did_ftplugin	plugged/vim-go/ftplugin/gomod.vim	/^let b:did_ftplugin = 1$/;"	v
+b:did_indent	plugged/vim-clojure-static/indent/clojure.vim	/^let b:did_indent = 1$/;"	v
 b:did_indent	plugged/vim-elixir/indent/eelixir.vim	/^let b:did_indent = 1$/;"	v
 b:did_indent	plugged/vim-elixir/indent/elixir.vim	/^let b:did_indent = 1$/;"	v
 b:did_indent	plugged/vim-go/indent/go.vim	/^let b:did_indent = 1$/;"	v
@@ -1888,6 +1973,8 @@ b:eelixir_subtype_indentexpr	plugged/vim-elixir/indent/eelixir.vim	/^let b:eelix
 b:fenced_block	plugged/vim-markdown/after/ftplugin/markdown.vim	/^let b:fenced_block = 0$/;"	v
 b:front_matter	plugged/vim-markdown/after/ftplugin/markdown.vim	/^let b:front_matter = 0$/;"	v
 b:match_ignorecase	plugged/vim-elixir/ftplugin/elixir.vim	/^  let b:match_ignorecase = 0$/;"	v
+b:match_skip	plugged/vim-clojure-static/ftplugin/clojure.vim	/^	let b:match_skip = 's:comment\\|string\\|regex\\|character'$/;"	v
+b:match_words	plugged/vim-clojure-static/ftplugin/clojure.vim	/^	let b:match_words = &matchpairs$/;"	v
 b:match_words	plugged/vim-elixir/ftplugin/eelixir.vim	/^  let b:match_words = s:match_words$/;"	v
 b:match_words	plugged/vim-elixir/ftplugin/elixir.vim	/^  let b:match_words = '\\:\\@<!\\<\\%(do\\|fn\\)\\:\\@!\\>' .$/;"	v
 b:surround_123	plugged/vim-elixir/ftplugin/eelixir.vim	/^  let b:surround_123 = "{{ \\r }}"$/;"	v
@@ -1895,27 +1982,42 @@ b:surround_35	plugged/vim-elixir/ftplugin/eelixir.vim	/^  let b:surround_35 = "<
 b:surround_45	plugged/vim-elixir/ftplugin/eelixir.vim	/^  let b:surround_45 = "<% \\r %>"$/;"	v
 b:surround_5	plugged/vim-elixir/ftplugin/eelixir.vim	/^  let b:surround_5 = "<% \\r %>\\n<% end %>"$/;"	v
 b:surround_61	plugged/vim-elixir/ftplugin/eelixir.vim	/^  let b:surround_61 = "<%= \\r %>"$/;"	v
+b:undo_ftplugin	plugged/vim-clojure-static/ftplugin/clojure.vim	/^		let b:undo_ftplugin .= ' | setlocal ' . s:setting . '<'$/;"	v
+b:undo_ftplugin	plugged/vim-clojure-static/ftplugin/clojure.vim	/^	let b:undo_ftplugin .= ' | setlocal path<'$/;"	v
+b:undo_ftplugin	plugged/vim-clojure-static/ftplugin/clojure.vim	/^	let b:undo_ftplugin .= ' | unlet! b:browsefilter'$/;"	v
+b:undo_ftplugin	plugged/vim-clojure-static/ftplugin/clojure.vim	/^	let b:undo_ftplugin .= ' | unlet! b:match_words b:match_skip'$/;"	v
+b:undo_ftplugin	plugged/vim-clojure-static/ftplugin/clojure.vim	/^let b:undo_ftplugin = 'setlocal iskeyword< define< formatoptions< comments< commentstring< lispwords<'$/;"	v
 b:undo_ftplugin	plugged/vim-elixir/ftplugin/eelixir.vim	/^let b:undo_ftplugin = "setl cms< " .$/;"	v
 b:undo_ftplugin	plugged/vim-elixir/ftplugin/elixir.vim	/^let b:undo_ftplugin = 'setlocal sw< sts< et< isk< com< cms< path< inex< sua< def< fo<'.$/;"	v
 b:undo_ftplugin	plugged/vim-go/ftplugin/asm.vim	/^let b:undo_ftplugin = "setl fo< com< cms<$/;"	v
 b:undo_ftplugin	plugged/vim-go/ftplugin/go.vim	/^let b:undo_ftplugin = "setl fo< com< cms<"$/;"	v
 b:undo_ftplugin	plugged/vim-go/ftplugin/gomod.vim	/^let b:undo_ftplugin = "setl fo< com< cms<$/;"	v
+b:undo_indent	plugged/vim-clojure-static/indent/clojure.vim	/^	let b:undo_indent .= '| setlocal lisp<'$/;"	v
+b:undo_indent	plugged/vim-clojure-static/indent/clojure.vim	/^let b:undo_indent = 'setlocal autoindent< smartindent< expandtab< softtabstop< shiftwidth< indentexpr< indentkeys<'$/;"	v
 backspace	plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:backspace(s)$/;"	f
 balloon	plugged/vim-go/autoload/go/tool.vim	/^function! s:balloon(msg)$/;"	f
 bang	autoload/plug.vim	/^function! s:bang(cmd, ...)$/;"	f
 bar	autoload/plug.vim	/^function! s:bar()$/;"	f
 batchfile	autoload/plug.vim	/^  function! s:batchfile(cmd)$/;"	f
+bdecode	plugged/vim-fireplace/pythonx/fireplace.py	/^def bdecode(f, char=None):$/;"	f
+bencode	plugged/vim-fireplace/pythonx/fireplace.py	/^def bencode(data, f):$/;"	f
 binary_search_begin	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/matcher_fuzzy.py	/^from deoplete.util import binary_search_begin, binary_search_end$/;"	i
 binary_search_begin	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/matcher_head.py	/^from deoplete.util import binary_search_begin, binary_search_end$/;"	i
 binary_search_begin	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^def binary_search_begin(li: typing.List[Candidates], prefix: str) -> int:$/;"	f
 binary_search_end	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/matcher_fuzzy.py	/^from deoplete.util import binary_search_begin, binary_search_end$/;"	i
 binary_search_end	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/matcher_head.py	/^from deoplete.util import binary_search_begin, binary_search_end$/;"	i
 binary_search_end	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^def binary_search_end(li: typing.List[Candidates], prefix: str) -> int:$/;"	f
+binread	plugged/vim-fireplace/pythonx/fireplace.py	/^def binread(f, count=1):$/;"	f
 bm	plugged/vim-elixir/bin/test_indent	/^def bm$/;"	f
+bracket_type	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:bracket_type(char)$/;"	f
 broken_pipe_exception	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^    broken_pipe_exception = BrokenPipeError$/;"	v
 broken_pipe_exception	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^    broken_pipe_exception = IOError$/;"	v
+buf	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:buf(...) abort$/;"	f
+bufext	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:bufext(...) abort$/;"	f
+buffer_absolute	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:buffer_absolute(...) abort$/;"	f
 buffer_line_count	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_methods.py	/^def buffer_line_count(buffer):$/;"	f
 buffer_name	plugged/vim-devicons/pythonx/vim_devicons/powerline/segments.py	/^from powerline.bindings.vim import (vim_get_func, buffer_name)$/;"	i
+buffer_path	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:buffer_path(...) abort$/;"	f
 buffer_repo	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_repo() dict abort$/;"	f
 buffer_set_lines	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_methods.py	/^buffer_set_lines = nvim_buf_set_lines$/;"	v
 buffer_type	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:buffer_type(...) dict abort$/;"	f
@@ -1943,7 +2045,9 @@ can	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^        return [] # Reim
 can	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^        return [] # Reimplement if your class can produce warnings$/;"	c	function:RBQLOutputWriter.get_warnings
 can	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^        return [] # Reimplement if your class can produce warnings$/;"	c	function:RBQLTableRegistry.get_warnings
 can_diffoff	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:can_diffoff(buf) abort$/;"	f
+candidate	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:candidate(val) abort$/;"	f
 candidates	plugged/deoplete.nvim/test/rplugin/python3/deoplete/test_converter_reorder_attr.py	/^candidates = [$/;"	v
+capture_test_run	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:capture_test_run(expr, pre, bang) abort$/;"	f
 cbs	plugged/vim-go/autoload/go/job.vim	/^  let cbs._start = function('s:start', [''], state)$/;"	v
 cbs	plugged/vim-go/autoload/go/job.vim	/^  let cbs.callback = function('s:callback', [], state)$/;"	v
 cbs	plugged/vim-go/autoload/go/job.vim	/^  let cbs.close_cb = function('s:close_cb', [], state)$/;"	v
@@ -1963,6 +2067,7 @@ check_custom_option	plugged/deoplete.nvim/autoload/deoplete/init.vim	/^function!
 check_custom_var	plugged/deoplete.nvim/autoload/deoplete/init.vim	/^function! s:check_custom_var(source_name, old_var, new_var) abort$/;"	f
 check_diagnostics	plugged/vim-go/autoload/go/highlight_test.vim	/^function! s:check_diagnostics(actual, expected, when)$/;"	f
 check_errors	plugged/vim-go/autoload/go/debug.vim	/^function! s:check_errors(resp_json) abort$/;"	f
+check_for_string	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:check_for_string()$/;"	f
 check_input_method	plugged/deoplete.nvim/autoload/deoplete/handler.vim	/^function! s:check_input_method() abort$/;"	f
 check_required_msgpack	plugged/deoplete.nvim/autoload/health/deoplete.vim	/^function! s:check_required_msgpack() abort$/;"	f
 check_required_python	plugged/deoplete.nvim/autoload/health/deoplete.vim	/^function! s:check_required_python() abort$/;"	f
@@ -1983,6 +2088,14 @@ clearOldFolds	plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function!
 clearOptions	plugged/vim-go/scripts/runtest.vim	/^function! s:clearOptions() abort$/;"	f
 clearState	plugged/vim-go/autoload/go/debug.vim	/^function! s:clearState() abort$/;"	f
 clear_group_from_matches	plugged/vim-go/autoload/go/util.vim	/^function! s:clear_group_from_matches(group) abort$/;"	f
+cljfmt#AutoFormat	plugged/vim-cljfmt/plugin/cljfmt.vim	/^function! cljfmt#AutoFormat()$/;"	f
+cljfmt#Format	plugged/vim-cljfmt/plugin/cljfmt.vim	/^function! cljfmt#Format()$/;"	f
+clojure_check_for_string_worker	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:clojure_check_for_string_worker()$/;"	f
+clojure_indent_pos	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:clojure_indent_pos()$/;"	f
+clojure_is_method_special_case_worker	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:clojure_is_method_special_case_worker(position)$/;"	f
+clojurecomplete#Complete	plugged/vim-clojure-static/autoload/clojurecomplete.vim	/^function! clojurecomplete#Complete(findstart, base)$/;"	f
+close	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:close(job) abort$/;"	f
+close	plugged/vim-fireplace/pythonx/fireplace.py	/^    def close(self):$/;"	m	class:Connection
 closeChildren	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:closeChildren(node) abort$/;"	f
 closeCurrentDir	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:closeCurrentDir(node) abort$/;"	f
 closeFold	plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:closeFold() abort dict$/;"	f
@@ -1991,9 +2104,12 @@ closeKindFold	plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function!
 closeTreeWindow	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:closeTreeWindow() abort$/;"	f
 close_cb	plugged/vim-go/autoload/go/def.vim	/^  function! s:close_cb(next, ch) dict$/;"	f
 close_cb	plugged/vim-go/autoload/go/job.vim	/^function! s:close_cb(ch) dict$/;"	f
+close_on_first_done	plugged/vim-fireplace/autoload/fireplace/session.vim	/^function! s:close_on_first_done(transport, msg) abort$/;"	f
 close_pane	autoload/plug.vim	/^function! s:close_pane()$/;"	f
 closeterm	plugged/vim-go/autoload/go/term.vim	/^function! s:closeterm()$/;"	f
 cmd_job	plugged/vim-go/autoload/go/cmd.vim	/^function! s:cmd_job(args) abort$/;"	f
+cmdwinenter	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:cmdwinenter() abort$/;"	f
+cmdwinleave	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:cmdwinleave() abort$/;"	f
 code	plugged/vim-go/autoload/fzf/decls.vim	/^function! s:code(group, attr) abort$/;"	f
 codeAction	plugged/vim-go/autoload/go/lsp/message.vim	/^function! s:codeAction(name, file) abort$/;"	f
 codecs	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^import codecs$/;"	i
@@ -2019,6 +2135,9 @@ complete	plugged/vim-go/autoload/go/guru.vim	/^function! s:complete(job, exit_st
 complete	plugged/vim-go/autoload/go/job_test.vim	/^func! s:complete(job, exit_code, messages)$/;"	f
 complete	plugged/vim-go/autoload/go/package_test.vim	/^func! s:complete(arglead, expected) abort$/;"	f
 complete	plugged/vim-go/plugin/go.vim	/^fun! s:complete(lead, cmdline, cursor)$/;"	f
+complete_add	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:complete_add(msg) abort$/;"	f
+complete_delegate	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:complete_delegate(queue, callback, msg) abort$/;"	f
+complete_extract	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:complete_extract(msg) abort$/;"	f
 completionErrorHandler	plugged/vim-go/autoload/go/lsp.vim	/^function! s:completionErrorHandler(next, error) abort dict$/;"	f
 completionHandler	plugged/vim-go/autoload/go/lsp.vim	/^function! s:completionHandler(next, msg) abort dict$/;"	f
 completion_begin	plugged/deoplete.nvim/rplugin/python3/deoplete/deoplete.py	/^    def completion_begin(self, user_context: UserContext) -> None:$/;"	m	class:Deoplete
@@ -2064,12 +2183,15 @@ cur_cnt	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^        var cur_cnt = cu
 cur_cnt	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^        var cur_cnt = cur_aggr[2];$/;"	v
 cur_sum	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^        var cur_sum = cur_aggr[0];$/;"	v
 cur_sum_sq	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^        var cur_sum_sq = cur_aggr[1];$/;"	v
+current_char	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:current_char()$/;"	f
 current_compiler	plugged/vim-elixir/compiler/credo.vim	/^let current_compiler = 'credo'$/;"	v
 current_compiler	plugged/vim-elixir/compiler/exunit.vim	/^let current_compiler = "exunit"$/;"	v
 current_compiler	plugged/vim-elixir/compiler/mix.vim	/^let current_compiler = 'mix'$/;"	v
+current_word	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:current_word()$/;"	f
 customOpenBookmark	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:customOpenBookmark(node) abort$/;"	f
 customOpenDir	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:customOpenDir(node) abort$/;"	f
 customOpenFile	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:customOpenFile(node) abort$/;"	f
+cword	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:cword() abort$/;"	f
 date	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import datetime # For date operations inside user queries$/;"	i
 datetime	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import datetime # For date operations inside user queries$/;"	i
 db#adapter#ecto#canonicalize	plugged/vim-elixir/autoload/db/adapter/ecto.vim	/^function! db#adapter#ecto#canonicalize(url) abort$/;"	f
@@ -2229,6 +2351,7 @@ doautocmd	autoload/plug.vim	/^function! s:doautocmd(...)$/;"	f
 dobufread	autoload/plug.vim	/^function! s:dobufread(names)$/;"	f
 docFromHoverResult	plugged/vim-go/autoload/go/lsp.vim	/^function! s:docFromHoverResult(msg) abort dict$/;"	f
 docLinkFromHoverResult	plugged/vim-go/autoload/go/lsp.vim	/^function! s:docLinkFromHoverResult(msg) abort dict$/;"	f
+done	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:done(id) abort$/;"	f
 double	plugged/vim-elixir/spec/indent/lists_spec.rb	/^  def double(x) do$/;"	f	class:example.project.config.test.test.test.project.test.create
 double	plugged/vim-elixir/spec/indent/lists_spec.rb	/^  def double(x) do$/;"	f	class:example.project.config.test.test.test.project.test.create.double
 double	plugged/vim-elixir/spec/indent/lists_spec.rb	/^  def double(x) do$/;"	f	class:example.project.config.test.test.test.project.test.create.double.double
@@ -2238,7 +2361,9 @@ dst_variables_map.initialize	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^   
 dst_variables_map.initialize	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^        dst_variables_map[prefix + String(field_num)] = {initialize: true, index: field_num - 1};$/;"	p
 echo	plugged/vim-go/autoload/go/util.vim	/^function! s:echo(msg, hi)$/;"	f
 echo_go_info	plugged/vim-go/autoload/go/auto.vim	/^function! s:echo_go_info()$/;"	f
+echon	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:echon(state, str, ...) abort$/;"	f
 edit_file	plugged/vim-elixir/spec/spec_helper.rb	/^  def edit_file(content)$/;"	f	class:Buffer
+editop	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:editop(type) abort$/;"	f
 eleline	plugged/eleline.vim/plugin/eleline.vim	/^augroup eleline$/;"	a
 eleline#LanguageClientNeovim	plugged/eleline.vim/autoload/eleline.vim	/^function! eleline#LanguageClientNeovim() abort$/;"	f
 elixir#indent	plugged/vim-elixir/indent/elixir.vim	/^function! elixir#indent(lnum)$/;"	f
@@ -2298,6 +2423,7 @@ esc	autoload/plug.vim	/^function! s:esc(path)$/;"	f
 escape	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^def escape(expr: str) -> str:$/;"	f
 escrtp	autoload/plug.vim	/^function! s:escrtp(path)$/;"	f
 eval	plugged/vim-go/autoload/go/debug.vim	/^function! s:eval(arg) abort$/;"	f
+eval_callback	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:eval_callback(state, delegates, message) abort$/;"	f
 eval_tree	plugged/vim-go/autoload/go/debug.vim	/^function! s:eval_tree(var, nest, isMapOrSliceChild) abort$/;"	f
 example	plugged/vim-elixir/spec/indent/lists_spec.rb	/^  def example do$/;"	f
 exception	plugged/deoplete.nvim/rplugin/python3/deoplete/logger.py	/^    def exception(self, msg: str,$/;"	m	class:LoggingMixin
@@ -2315,6 +2441,7 @@ exists_path	plugged/deoplete.nvim/rplugin/python3/deoplete/context.py	/^from deo
 exists_path	plugged/deoplete.nvim/rplugin/python3/deoplete/source/file.py	/^from deoplete.util import expand, exists_path, UserContext, Candidates$/;"	i
 exists_path	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^def exists_path(path: str) -> bool:$/;"	f
 exit	plugged/vim-go/autoload/go/lsp.vim	/^function! s:exit(restart) abort$/;"	f
+exit_callback	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:exit_callback(url, state, requests, sessions, job, status) abort$/;"	f
 exit_cb	plugged/vim-go/autoload/go/job.vim	/^function! s:exit_cb(job, exitval) dict$/;"	f
 exit_cb	plugged/vim-go/autoload/go/rename.vim	/^function! s:exit_cb(next, job, exitval) abort$/;"	f
 exit_cb	plugged/vim-go/autoload/go/term.vim	/^function! s:exit_cb(job_id, exit_status) dict abort$/;"	f
@@ -2363,6 +2490,7 @@ filter	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/sorter_word.py	/^  
 filter	plugged/deoplete.nvim/rplugin/python3/deoplete/logger.py	/^    def filter(self, record: logging.LogRecord) -> bool:$/;"	m	class:DeopleteLogFilter
 filter	plugged/vim-devicons/rplugin/python3/denite/filter/devicons_denite_converter.py	/^	def filter(self, context):$/;"	m	class:Filter
 filter_attrs	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/converter_reorder_attr.py	/^    def filter_attrs(candidates: Candidates,$/;"	m	class:Filter
+filterop	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:filterop(type) abort$/;"	f
 findAndRevealPath	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:findAndRevealPath(pathStr) abort$/;"	f
 findHunk	plugged/nerdtree-git-plugin/nerdtree_plugin/git_status.vim	/^function! s:findHunk(node, direction) abort$/;"	f
 find_in_table	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^def find_in_table(table, token):$/;"	f
@@ -2384,6 +2512,60 @@ finish	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^    def finish(self):
 finish	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^    def finish(self):$/;"	m	class:UniqCountWriter
 finish	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^    def finish(self):$/;"	m	class:UniqWriter
 finish_bindings	autoload/plug.vim	/^function! s:finish_bindings()$/;"	f
+fireplace	plugged/vim-fireplace/plugin/fireplace.vim	/^augroup fireplace$/;"	a
+fireplace#CljEvalCommand	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#CljEvalCommand(line1, line2, range, bang, mods, args) abort$/;"	f
+fireplace#CljEvalComplete	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#CljEvalComplete(A, L, P) abort$/;"	f
+fireplace#CljsEvalCommand	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#CljsEvalCommand(line1, line2, range, bang, mods, args) abort$/;"	f
+fireplace#CljsEvalComplete	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#CljsEvalComplete(A, L, P) abort$/;"	f
+fireplace#ConnectCommand	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#ConnectCommand(line1, line2, range, bang, mods, arg, args) abort$/;"	f
+fireplace#ConnectComplete	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#ConnectComplete(A, L, P) abort$/;"	f
+fireplace#EvalComplete	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#EvalComplete(A, L, P, ...) abort$/;"	f
+fireplace#NsComplete	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#NsComplete(A, L, P) abort$/;"	f
+fireplace#activate	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#activate() abort$/;"	f
+fireplace#cfile	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#cfile() abort$/;"	f
+fireplace#client	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#client(...) abort$/;"	f
+fireplace#clj	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#clj(...) abort$/;"	f
+fireplace#cljs	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#cljs(...) abort$/;"	f
+fireplace#echo_session_eval	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#echo_session_eval(...) abort$/;"	f
+fireplace#eval	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#eval(...) abort$/;"	f
+fireplace#eval_complete	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#eval_complete(A, L, P) abort$/;"	f
+fireplace#evalparse	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#evalparse(expr, ...) abort$/;"	f
+fireplace#findfile	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#findfile(path) abort$/;"	f
+fireplace#findresource	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#findresource(resource, ...) abort$/;"	f
+fireplace#format	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#format(lnum, count, char) abort$/;"	f
+fireplace#id	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#id() abort$/;"	f
+fireplace#info	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#info(symbol) abort$/;"	f
+fireplace#interrupt	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#interrupt(msg_or_id) abort$/;"	f
+fireplace#jar_contents	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#jar_contents(path) abort$/;"	f
+fireplace#location	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#location(keyword) abort$/;"	f
+fireplace#massage_list	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#massage_list(...) abort$/;"	f
+fireplace#message	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#message(payload, ...) abort$/;"	f
+fireplace#native	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#native(...) abort$/;"	f
+fireplace#ns	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#ns(...) abort$/;"	f
+fireplace#ns_complete	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#ns_complete(A, L, P) abort$/;"	f
+fireplace#omnicomplete	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#omnicomplete(findstart, base, ...) abort$/;"	f
+fireplace#op_available	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#op_available(op) abort$/;"	f
+fireplace#path	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#path(...) abort$/;"	f
+fireplace#platform	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#platform(...) abort$/;"	f
+fireplace#qualify_keyword	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#qualify_keyword(kw) abort$/;"	f
+fireplace#query	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#query(...) abort$/;"	f
+fireplace#quickfix_for	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#quickfix_for(stacktrace) abort$/;"	f
+fireplace#register_port_file	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#register_port_file(portfile, ...) abort$/;"	f
+fireplace#resolve_alias	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#resolve_alias(name) abort$/;"	f
+fireplace#session#for	plugged/vim-fireplace/autoload/fireplace/session.vim	/^function! fireplace#session#for(transport, ...) abort$/;"	f
+fireplace#session_eval	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#session_eval(...) abort$/;"	f
+fireplace#skip	plugged/vim-cljfmt/plugin/cljfmt.vim	/^let fireplace#skip = 'synIDattr(synID(line("."),col("."),1),"name") =~? "comment\\\\|string\\\\|char\\\\|regexp"'$/;"	v
+fireplace#skip	plugged/vim-fireplace/autoload/fireplace.vim	/^let fireplace#skip = 'synIDattr(synID(line("."),col("."),1),"name") =~? "comment\\\\|string\\\\|char\\\\|regexp"'$/;"	v
+fireplace#source	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#source(symbol) abort$/;"	f
+fireplace#transport#combine	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! fireplace#transport#combine(responses) abort$/;"	f
+fireplace#transport#connect	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! fireplace#transport#connect(arg) abort$/;"	f
+fireplace#transport#id	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! fireplace#transport#id() abort$/;"	f
+fireplace#transport#interrupt	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! fireplace#transport#interrupt(id) abort$/;"	f
+fireplace#transport#stdin	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! fireplace#transport#stdin(session_or_id, data) abort$/;"	f
+fireplace#transport#wait	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! fireplace#transport#wait(id, ...) abort$/;"	f
+fireplace#wait	plugged/vim-fireplace/autoload/fireplace.vim	/^function! fireplace#wait(msg_or_id_or_list, ...) abort$/;"	f
+fireplace_eval	plugged/vim-fireplace/autoload/fireplace.vim	/^augroup fireplace_eval$/;"	a
+fireplace_transport	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^augroup fireplace_transport$/;"	a
 fmt_cmd	plugged/vim-go/autoload/go/fmt.vim	/^function! s:fmt_cmd(bin_name, source, target)$/;"	f
 fnameescape	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:fnameescape(file) abort$/;"	f
 fold	plugged/vim-elixir/spec/folding/basic_spec.rb	/^  def self.fold(content)$/;"	F
@@ -2498,6 +2680,7 @@ fugitive_status	plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_st
 fugitive_temp	plugged/vim-fugitive/autoload/fugitive.vim	/^augroup fugitive_temp$/;"	a
 fun	plugged/vim-elixir/spec/indent/lists_spec.rb	/^    def fun do$/;"	f	class:example.project.config.test.test.test.project.test.create.double.double.double.test_another_feature
 function	plugged/vim-elixir/spec/syntax/strings_spec.rb	/^      def function do$/;"	f
+function	plugged/vim-fireplace/autoload/fireplace/session.vim	/^function! s:function(name) abort$/;"	f
 function	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:function(name) abort$/;"	f
 fuzzy_escape	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/matcher_full_fuzzy.py	/^from deoplete.util import fuzzy_escape, UserContext, Candidates$/;"	i
 fuzzy_escape	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/matcher_fuzzy.py	/^from deoplete.util import fuzzy_escape, UserContext, Candidates$/;"	i
@@ -2627,7 +2810,21 @@ g:_neovim_rpc_jobs	plugged/vim-hug-neovim-rpc/autoload/neovim_rpc.vim	/^let g:_n
 g:_neovim_rpc_main_channel	plugged/vim-hug-neovim-rpc/autoload/neovim_rpc.vim	/^let g:_neovim_rpc_main_channel = -1$/;"	v
 g:_webdevicons_airline_orig_formatter	plugged/vim-devicons/plugin/webdevicons.vim	/^  let g:_webdevicons_airline_orig_formatter = get(g:, 'airline#extensions#tabline#formatter', 'default')$/;"	v
 g:airline#extensions#tabline#formatter	plugged/vim-devicons/plugin/webdevicons.vim	/^  let g:airline#extensions#tabline#formatter = 'webdevicons'$/;"	v
+g:autoloaded_fireplace	plugged/vim-fireplace/autoload/fireplace.vim	/^let g:autoloaded_fireplace = 1$/;"	v
+g:autoloaded_fireplace_session	plugged/vim-fireplace/autoload/fireplace/session.vim	/^let g:autoloaded_fireplace_session = 1$/;"	v
+g:autoloaded_fireplace_transport	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^let g:autoloaded_fireplace_transport = 1$/;"	v
 g:autoloaded_fugitive	plugged/vim-fugitive/autoload/fugitive.vim	/^let g:autoloaded_fugitive = 1$/;"	v
+g:clj_fmt_config	plugged/vim-cljfmt/plugin/cljfmt.vim	/^    let g:clj_fmt_config = 'nil'$/;"	v
+g:clj_fmt_required	plugged/vim-cljfmt/plugin/cljfmt.vim	/^let g:clj_fmt_required = 0$/;"	v
+g:clojure_align_multiline_strings	plugged/vim-clojure-static/indent/clojure.vim	/^		let g:clojure_align_multiline_strings = 0$/;"	v
+g:clojure_align_subforms	plugged/vim-clojure-static/indent/clojure.vim	/^		let g:clojure_align_subforms = 0$/;"	v
+g:clojure_fuzzy_indent	plugged/vim-clojure-static/indent/clojure.vim	/^		let g:clojure_fuzzy_indent = 1$/;"	v
+g:clojure_fuzzy_indent_blacklist	plugged/vim-clojure-static/indent/clojure.vim	/^		let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\\v^with-%(meta|out-str|loading-context)$']$/;"	v
+g:clojure_fuzzy_indent_patterns	plugged/vim-clojure-static/indent/clojure.vim	/^		let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']$/;"	v
+g:clojure_highlight_local_vars	plugged/vim-clojure-highlight/plugin/vim_clojure_highlight.vim	/^	let g:clojure_highlight_local_vars = 1$/;"	v
+g:clojure_highlight_references	plugged/vim-clojure-highlight/plugin/vim_clojure_highlight.vim	/^	let g:clojure_highlight_references = 1$/;"	v
+g:clojure_maxlines	plugged/vim-clojure-static/indent/clojure.vim	/^		let g:clojure_maxlines = 100$/;"	v
+g:clojure_special_indent_words	plugged/vim-clojure-static/indent/clojure.vim	/^		let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'$/;"	v
 g:colors_name	plugged/seoul256.vim/colors/seoul256-light.vim	/^    let g:colors_name = &background == 'dark' ? 'seoul256' : 'seoul256-light'$/;"	v
 g:colors_name	plugged/seoul256.vim/colors/seoul256-light.vim	/^    let g:colors_name = 'seoul256'$/;"	v
 g:colors_name	plugged/seoul256.vim/colors/seoul256.vim	/^let g:colors_name = 'seoul256'$/;"	v
@@ -2644,6 +2841,8 @@ g:eelixir_default_subtype	plugged/vim-elixir/syntax/eelixir.vim	/^  let g:eelixi
 g:elixir_indent_debug	plugged/vim-elixir/test.init.vim	/^let g:elixir_indent_debug=1$/;"	v
 g:elixir_indent_max_lookbehind	plugged/vim-elixir/autoload/elixir/indent.vim	/^  let g:elixir_indent_max_lookbehind = 30$/;"	v
 g:elixir_use_markdown_for_docs	plugged/vim-elixir/syntax/elixir.vim	/^  let g:elixir_use_markdown_for_docs = 0$/;"	v
+g:fireplace#reader	plugged/vim-fireplace/autoload/fireplace.vim	/^let g:fireplace#reader =$/;"	v
+g:fireplace_python_executable	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^  let g:fireplace_python_executable = executable('python3') ? 'python3' : 'python'$/;"	v
 g:fugitive_git_executable	plugged/vim-fugitive/autoload/fugitive.vim	/^  let g:fugitive_git_executable = 'env ' . g:fugitive_git_executable$/;"	v
 g:fugitive_git_executable	plugged/vim-fugitive/autoload/fugitive.vim	/^  let g:fugitive_git_executable = 'git'$/;"	v
 g:fugitive_summary_format	plugged/vim-fugitive/autoload/fugitive.vim	/^  let g:fugitive_summary_format = '%s'$/;"	v
@@ -2731,6 +2930,7 @@ g:io_fugitive	plugged/vim-fugitive/plugin/fugitive.vim	/^let g:io_fugitive = {$/
 g:loaded_better_whitespace_plugin	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^let g:loaded_better_whitespace_plugin = 1$/;"	v
 g:loaded_deoplete	plugged/deoplete.nvim/plugin/deoplete.vim	/^let g:loaded_deoplete = 1$/;"	v
 g:loaded_eleline	plugged/eleline.vim/plugin/eleline.vim	/^let g:loaded_eleline = 1$/;"	v
+g:loaded_fireplace	plugged/vim-fireplace/plugin/fireplace.vim	/^let g:loaded_fireplace = 1$/;"	v
 g:loaded_fugitive	plugged/vim-fugitive/plugin/fugitive.vim	/^let g:loaded_fugitive = 1$/;"	v
 g:loaded_gutentags	plugged/vim-gutentags/plugin/gutentags.vim	/^let g:loaded_gutentags = 1$/;"	v
 g:loaded_nerdtree_autoload	plugged/nerdtree/autoload/nerdtree.vim	/^let g:loaded_nerdtree_autoload = 1$/;"	v
@@ -2960,6 +3160,7 @@ get_col_num_rfc_lines	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^func! s:get
 get_col_num_single_line	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^func! s:get_col_num_single_line(fields, delim, offset)$/;"	f
 get_color	plugged/nerdtree-dash/syntax/nerdtree.vim	/^function! s:get_color(group, attr) abort$/;"	f
 get_column_names	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^    def get_column_names(self):$/;"	m	class:SqliteRecordIterator
+get_complete_context	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:get_complete_context() abort$/;"	f
 get_complete_position	plugged/deoplete.nvim/rplugin/python3/deoplete/base/source.py	/^    def get_complete_position(self, context: UserContext) -> int:$/;"	m	class:Base
 get_complete_position	plugged/deoplete.nvim/rplugin/python3/deoplete/source/file.py	/^    def get_complete_position(self, context: UserContext) -> int:$/;"	m	class:Source
 get_complete_position	plugged/deoplete.nvim/rplugin/python3/deoplete/source/member.py	/^    def get_complete_position(self, context: UserContext) -> int:$/;"	m	class:Source
@@ -3435,6 +3636,7 @@ go#util#archive	plugged/vim-go/autoload/go/util.vim	/^function! go#util#archive(
 go#util#camelcase	plugged/vim-go/autoload/go/util.vim	/^function! go#util#camelcase(word) abort$/;"	f
 go#util#env	plugged/vim-go/autoload/go/util.vim	/^function! go#util#env(key) abort$/;"	f
 go#util#goarch	plugged/vim-go/autoload/go/util.vim	/^function! go#util#goarch() abort$/;"	f
+go#util#gobin	plugged/vim-go/autoload/go/util.vim	/^function! go#util#gobin() abort$/;"	f
 go#util#gomod	plugged/vim-go/autoload/go/util.vim	/^function! go#util#gomod() abort$/;"	f
 go#util#gomodcache	plugged/vim-go/autoload/go/util.vim	/^function! go#util#gomodcache() abort$/;"	f
 go#util#goos	plugged/vim-go/autoload/go/util.vim	/^function! go#util#goos() abort$/;"	f
@@ -3546,6 +3748,7 @@ handle_list_local_vars	plugged/vim-go/autoload/go/debug.vim	/^function! s:handle
 handle_set	plugged/vim-go/autoload/go/debug.vim	/^function! s:handle_set(check_errors, res) abort$/;"	f
 handle_stack_response	plugged/vim-go/autoload/go/debug.vim	/^function! s:handle_stack_response(command, check_errors, res) abort$/;"	f
 handle_staleness_check_response	plugged/vim-go/autoload/go/debug.vim	/^function! s:handle_staleness_check_response(filename, check_errors, res) abort$/;"	f
+handle_test_response	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:handle_test_response(buffer, id, path, expr, bang, message) abort$/;"	f
 handle_with	plugged/vim-elixir/autoload/elixir/indent.vim	/^function! s:handle_with(start_lnum, start_col, context)$/;"	f
 handle_worker_error	plugged/rainbow_csv/rbql_core/vim_rbql.js	/^function handle_worker_error(exception) {$/;"	f
 handle_worker_success	plugged/rainbow_csv/rbql_core/vim_rbql.js	/^function handle_worker_success(warnings, output_path) {$/;"	f
@@ -3586,6 +3789,7 @@ highlight	plugged/vim-go/rplugin/python3/denite/source/decls.py	/^    def highli
 highlightFromGroup	plugged/nerdtree-git-plugin/after/syntax/nerdtree.vim	/^function! s:highlightFromGroup(group) abort$/;"	f
 highlightMatches	plugged/vim-go/autoload/go/lsp.vim	/^function! s:highlightMatches(errorMatches, warningMatches) abort$/;"	f
 history_path	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^history_path = os.path.join(os.path.expanduser("~"), ".rbql_py_query_history")$/;"	v
+histswap	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:histswap(list) abort$/;"	f
 hoverHandler	plugged/vim-go/autoload/go/lsp.vim	/^function! s:hoverHandler(next, msg) abort dict$/;"	f
 how_are_you	plugged/vim-elixir/spec/indent/blocks_spec.rb	/^    def how_are_you do$/;"	f	class:name.name.f.f
 hs_highlight_boolean	plugged/vim-solarized8/colors/solarized8.vim	/^    let hs_highlight_boolean=1$/;"	v
@@ -3607,10 +3811,13 @@ hs_highlight_delimiters	plugged/vim-solarized8/colors/solarized8_low.vim	/^  let
 i	plugged/vim-elixir/spec/spec_helper.rb	/^  def i(str)$/;"	f	class:Differ
 ic	plugged/vim-go/ftplugin/go.vim	/^  onoremap <buffer> <silent> ic :<c-u>call go#textobj#Comment('i')<cr>$/;"	m
 if	plugged/vim-go/ftplugin/go.vim	/^  onoremap <buffer> <silent> if :<c-u>call go#textobj#Function('i')<cr>$/;"	m
+ignored_region	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:ignored_region()$/;"	f
+impl_ns	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:impl_ns(...) abort$/;"	f
 import_plugin	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^def import_plugin(path: str, source: str,$/;"	f
 importlib	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^import importlib.util$/;"	i
 importlib	plugged/nvim-yarp/pythonx/yarp.py	/^import importlib$/;"	i
 importlib	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^import importlib$/;"	i
+includes_file	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:includes_file(file, path) abort$/;"	f
 incomingCallsHandler	plugged/vim-go/autoload/go/lsp.vim	/^function! s:incomingCallsHandler(next, msg) abort dict$/;"	f
 increment	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^    def increment(self, key, _val):$/;"	m	class:CountAggregator
 increment	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^    def increment(self, key, val):$/;"	m	class:ArrayAggAggregator
@@ -3649,7 +3856,11 @@ init_var	plugged/tagbar/plugin/tagbar.vim	/^function! s:init_var(var, value) abo
 initialize	plugged/vim-devicons/plugin/webdevicons.vim	/^function! s:initialize()$/;"	f
 initialize	plugged/vim-elixir/spec/spec_helper.rb	/^  def initialize$/;"	f	class:Differ
 initialize	plugged/vim-elixir/spec/spec_helper.rb	/^  def initialize(vim, type)$/;"	f	class:Buffer
+input	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:input(default) abort$/;"	f
 inputPrompt	plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! s:inputPrompt(action)$/;"	f
+inputclose	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:inputclose() abort$/;"	f
+inputeval	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:inputeval() abort$/;"	f
+inputlist	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:inputlist(label, entries) abort$/;"	f
 inside	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import datetime # For date operations inside user queries$/;"	i
 inside	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import math # For math operations inside user queries$/;"	i
 inside	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import os # For system operations inside user queries$/;"	i
@@ -3688,8 +3899,11 @@ is_delimited_table	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^def is_deli
 is_exiting	plugged/deoplete.nvim/autoload/deoplete/handler.vim	/^function! s:is_exiting() abort$/;"	f
 is_local_plug	autoload/plug.vim	/^  function! s:is_local_plug(repo)$/;"	f
 is_managed	autoload/plug.vim	/^function! s:is_managed(name)$/;"	f
+is_method_special_case	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:is_method_special_case(position)$/;"	f
 is_mkdCode	plugged/vim-markdown/after/ftplugin/markdown.vim	/^function! s:is_mkdCode(lnum)$/;"	f
+is_paren	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:is_paren()$/;"	f
 is_preview_window_open	autoload/plug.vim	/^function! s:is_preview_window_open()$/;"	f
+is_reader_conditional_special_case	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:is_reader_conditional_special_case(position)$/;"	f
 is_skip	plugged/deoplete.nvim/autoload/deoplete/handler.vim	/^function! s:is_skip(event) abort$/;"	f
 is_skip_prev_text	plugged/deoplete.nvim/autoload/deoplete/handler.vim	/^function! s:is_skip_prev_text(event) abort$/;"	f
 is_skip_text	plugged/deoplete.nvim/autoload/deoplete/handler.vim	/^function! s:is_skip_text(event) abort$/;"	f
@@ -3706,8 +3920,12 @@ job_exit_cb	autoload/plug.vim	/^function! s:job_exit_cb(self, data) abort$/;"	f
 job_out_cb	autoload/plug.vim	/^function! s:job_out_cb(self, data) abort$/;"	f
 join_by_delim	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^    def join_by_delim(self, fields):$/;"	m	class:CSVWriter
 json	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^import json$/;"	i
+json	plugged/vim-fireplace/pythonx/fireplace.py	/^import json$/;"	i
 json	plugged/vim-go/rplugin/python3/denite/source/decls.py	/^import json$/;"	i
 json	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^import json$/;"	i
+json_callback	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:json_callback(url, state, requests, sessions, job, msg) abort$/;"	f
+json_send	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:json_send(job, msg) abort$/;"	f
+json_start	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:json_start(command, out_cb, exit_cb) abort$/;"	f
 jumpToChild	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:jumpToChild(node, last) abort$/;"	f
 jumpToFirstChild	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:jumpToFirstChild(node) abort$/;"	f
 jumpToLastChild	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:jumpToLastChild(node) abort$/;"	f
@@ -3798,6 +4016,9 @@ lspfactory.get	plugged/vim-go/autoload/go/lsp.vim	/^function! s:lspfactory.get()
 lspfactory.reset	plugged/vim-go/autoload/go/lsp.vim	/^function! s:lspfactory.reset() dict abort$/;"	f
 lv#Term	autoload/lv.vim	/^function! lv#Term()$/;"	f
 m	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^        var m = Math.floor(cur_aggr.length \/ 2);$/;"	v
+macroexpand	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:macroexpand(fn, form) abort$/;"	f
+macroexpand1op	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:macroexpand1op(type) abort$/;"	f
+macroexpandop	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:macroexpandop(type) abort$/;"	f
 main	plugged/deoplete.nvim/autoload/deoplete/_main.py	/^def main(serveraddr):$/;"	f
 main	plugged/deoplete.nvim/rplugin/python3/deoplete/child.py	/^    def main(self, name: str, args: typing.List[typing.Any],$/;"	m	class:Child
 main	plugged/rainbow_csv/rbql_core/rbql-js/cli_rbql.js	/^function main() {$/;"	f
@@ -3806,6 +4027,7 @@ main	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^def main():$/;"	f
 main	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^def main():$/;"	f
 main	plugged/rainbow_csv/rbql_core/vim_rbql.js	/^function main() {$/;"	f
 main	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^def main():$/;"	f
+main	plugged/vim-fireplace/pythonx/fireplace.py	/^def main(host = None, port = None, *args):$/;"	f
 main.scheme.--input	plugged/rainbow_csv/rbql_core/rbql-js/cli_rbql.js	/^        '--input': {'help': 'Read csv table from FILE instead of stdin. Required in interactive mode', 'metavar': 'FILE'},$/;"	p
 main_loop	plugged/deoplete.nvim/rplugin/python3/deoplete/child.py	/^    def main_loop(self, stdout: typing.Any) -> None:$/;"	m	class:Child
 main_syntax	plugged/vim-elixir/syntax/eelixir.vim	/^  let main_syntax = 'eelixir'$/;"	v
@@ -3824,9 +4046,12 @@ make_rbql_demo	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^func! s:make_rbql_
 make_select_line	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^func! s:make_select_line(num_fields)$/;"	f
 manual_completion_begin	plugged/deoplete.nvim/rplugin/python3/deoplete/__init__.py	/^        def manual_completion_begin(self, context: Context) -> None:$/;"	m	class:DeopleteHandlers
 manual_update_tags	plugged/vim-gutentags/autoload/gutentags.vim	/^function! s:manual_update_tags(bang) abort$/;"	f
+map	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:map(mode, lhs, rhs, ...) abort$/;"	f
 map_variables_directly	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def map_variables_directly(query_text, column_names, dst_variables_map):$/;"	f
 mapleader	plugged/vim-elixir/test.init.vim	/^let mapleader=","$/;"	v
 mark_window	plugged/tagbar/autoload/tagbar.vim	/^function! s:mark_window() abort$/;"	f
+match_one	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:match_one(patterns, string)$/;"	f
+match_pairs	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:match_pairs(open, close, stopat)$/;"	f
 matchaddpos	plugged/vim-go/autoload/go/util.vim	/^function! s:matchaddpos(group, pos) abort$/;"	f
 matchbegin	plugged/auto-pairs/plugin/auto-pairs.vim	/^func! s:matchbegin(text, close)$/;"	f
 matched_indentkeys	plugged/deoplete.nvim/autoload/deoplete/handler.vim	/^function! s:matched_indentkeys(input) abort$/;"	f
@@ -3931,9 +4156,11 @@ normalize_fields	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^    def normal
 normalize_newlines_in_fields	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^def normalize_newlines_in_fields(table):$/;"	f
 normalize_warnings	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^def normalize_warnings(warnings):$/;"	f
 not	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^        import readline # Module readline is not available on Windows$/;"	i
+notify	plugged/vim-fireplace/pythonx/fireplace.py	/^    def notify(self, data, i = 0):$/;"	m	class:Connection
 notify	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^    def notify(cls, channel, event, args):$/;"	m	class:NvimHandler
 notify	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^    def notify(cls, cmd=None):$/;"	m	class:VimHandler
 notify_exited	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^    def notify_exited(cls, channel):$/;"	m	class:VimHandler
+ns	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:ns(...) abort$/;"	f
 numericHighlightGroupInAssignment	plugged/vim-go/autoload/go/highlight_test.vim	/^function! s:numericHighlightGroupInAssignment(testname, value)$/;"	f
 numericHighlightGroupInMultidimensionalSliceElement	plugged/vim-go/autoload/go/highlight_test.vim	/^function! s:numericHighlightGroupInMultidimensionalSliceElement(testname, value)$/;"	f
 numericHighlightGroupInMultidimensionalSliceIndex	plugged/vim-go/autoload/go/highlight_test.vim	/^function! s:numericHighlightGroupInMultidimensionalSliceIndex(testname, first, second)$/;"	f
@@ -4018,6 +4245,13 @@ on_setup	plugged/nvim-yarp/pythonx/yarp.py	/^def on_setup():$/;"	f
 on_stderr	plugged/vim-go/autoload/go/job.vim	/^function! s:on_stderr(mode, ch, data, event) dict$/;"	f
 on_stdout	plugged/vim-go/autoload/go/job.vim	/^function! s:on_stdout(mode, ch, data, event) dict$/;"	f
 on_stdout	plugged/vim-go/autoload/go/term.vim	/^function! s:on_stdout(job_id, data, event) dict abort$/;"	f
+oneoff.Client	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:oneoff.Client() dict abort$/;"	f
+oneoff.Eval	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:oneoff.Eval(...) dict abort$/;"	f
+oneoff.HasOp	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:oneoff.HasOp(op) abort$/;"	f
+oneoff.Path	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:oneoff.Path() dict abort$/;"	f
+oneoff.Session	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:oneoff.Session(...) abort$/;"	f
+op_guard	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:op_guard(...) abort$/;"	f
+op_missing_error	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:op_missing_error(op, ...) abort$/;"	f
 openExplorer	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:openExplorer(node) abort$/;"	f
 openFold	plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:openFold() abort dict$/;"	f
 openFold	plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:openFold() abort dict$/;"	f
@@ -4033,18 +4267,21 @@ openVSplitBookmark	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:
 operations	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import datetime # For date operations inside user queries$/;"	i
 operations	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import math # For math operations inside user queries$/;"	i
 operations	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import os # For system operations inside user queries$/;"	i
+opfunc	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:opfunc(type) abort$/;"	f
 os	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^import os$/;"	i
 os	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import os # For system operations inside user queries$/;"	i
 os	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^import os$/;"	i
 os	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^import os$/;"	i
 os	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^import os$/;"	i
 os	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^import os$/;"	i
+os	plugged/vim-fireplace/pythonx/fireplace.py	/^import os$/;"	i
 os	plugged/vim-go/rplugin/python3/denite/source/decls.py	/^import os$/;"	i
 os	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^import os$/;"	i
 out_cb	plugged/eleline.vim/plugin/eleline.vim	/^function! s:out_cb(channel, message) abort$/;"	f
 out_cb	plugged/vim-go/autoload/go/debug.vim	/^function! s:out_cb(ch, msg) abort$/;"	f
 out_cb	plugged/vim-go/autoload/go/term.vim	/^func! s:out_cb(channel, msg) dict abort$/;"	f
 out_format_names	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^out_format_names = ['csv', 'tsv', 'input']$/;"	v
+output_response	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:output_response(response) abort$/;"	f
 overlap_length	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/converter_remove_overlap.py	/^def overlap_length(left: str, next_input_words: typing.List[str]) -> int:$/;"	f
 overlap_length	plugged/deoplete.nvim/test/rplugin/python3/deoplete/test_filter.py	/^from deoplete.filter.converter_remove_overlap import overlap_length$/;"	i
 package	plugged/vim-go/autoload/go/debug.vim	/^function! s:package(args)$/;"	f
@@ -4073,7 +4310,11 @@ parse_output	plugged/vim-go/autoload/go/referrers.vim	/^function! s:parse_output
 partial	plugged/deoplete.nvim/rplugin/python3/deoplete/parent.py	/^from functools import partial$/;"	i
 path	autoload/plug.vim	/^  function! s:path(path)$/;"	f
 path2str	plugged/nerdtree-git-plugin/nerdtree_plugin/git_status.vim	/^function! s:path2str(path) abort$/;"	f
+path_extract	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:path_extract(path, ...) abort$/;"	f
 paths	plugged/vim-go/autoload/go/package.vim	/^function! s:paths() abort$/;"	f
+piggieback	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:piggieback(count, arg, remove) abort$/;"	f
+piggieback.Piggieback	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:piggieback.Piggieback(arg, ...) abort$/;"	f
+piggieback.Session	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:piggieback.Session() abort$/;"	f
 pipe_data_received	plugged/deoplete.nvim/rplugin/python3/deoplete/process.py	/^    def pipe_data_received(self, fd: int, data: typing.Any) -> None:$/;"	m	class:Process
 pkg_resources	plugged/deoplete.nvim/rplugin/python3/deoplete/logger.py	/^            import pkg_resources$/;"	i
 pkg_resources	plugged/vim-devicons/pythonx/vim_devicons/__init__.py	/^import pkg_resources$/;"	i
@@ -4097,6 +4338,7 @@ polymorphic_unichr	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^polymo
 polymorphic_xrange	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^polymorphic_xrange = range if PY3 else xrange$/;"	v
 polymorphic_xrange	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^polymorphic_xrange = range if PY3 else xrange$/;"	v
 position	plugged/vim-go/autoload/go/lsp/message.vim	/^function! s:position(line, col) abort$/;"	f
+pr	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:pr(obj) abort$/;"	f
 prepare	autoload/plug.vim	/^function! s:prepare(...)$/;"	f
 prepareCallHierarchyHandler	plugged/vim-go/autoload/go/lsp.vim	/^function! s:prepareCallHierarchyHandler(next, msg) abort dict$/;"	f
 preserveerrors	plugged/vim-go/autoload/go/lint.vim	/^function! s:preserveerrors(autosave, listtype) abort$/;"	f
@@ -4124,6 +4366,8 @@ print_function	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^from __future__
 print_function	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^from __future__ import print_function$/;"	i
 print_function	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^from __future__ import print_function$/;"	i
 print_function	plugged/vim-devicons/pythonx/vim_devicons/powerline/segments.py	/^from __future__ import (unicode_literals, division, absolute_import, print_function)$/;"	i
+print_last	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:print_last() abort$/;"	f
+printop	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:printop(type) abort$/;"	f
 process_exited	plugged/deoplete.nvim/rplugin/python3/deoplete/process.py	/^    def process_exited(self) -> None:$/;"	m	class:Process
 process_options_file	plugged/vim-gutentags/autoload/gutentags/ctags.vim	/^function! s:process_options_file(proj_dir, path) abort$/;"	f
 process_pending_requests	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^def process_pending_requests():$/;"	f
@@ -4142,6 +4386,10 @@ pyexe	plugged/nvim-yarp/autoload/yarp/pyx.vim	/^func! s:pyexe() dict$/;"	f
 python_string_escape_column_name	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def python_string_escape_column_name(column_name, quote_char):$/;"	f
 python_version	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^python_version = float('{}.{}'.format(sys.version_info[0], sys.version_info[1]))$/;"	v
 qf	plugged/eleline.vim/plugin/eleline.vim	/^function! s:qf() abort$/;"	f
+qfhistory	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:qfhistory() abort$/;"	f
+qfhistory_item	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:qfhistory_item(entry) abort$/;"	f
+qfmassage	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:qfmassage(line, path) abort$/;"	f
+qsym	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:qsym(symbol) abort$/;"	f
 queries	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import datetime # For date operations inside user queries$/;"	i
 queries	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import math # For math operations inside user queries$/;"	i
 queries	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import os # For system operations inside user queries$/;"	i
@@ -4156,6 +4404,7 @@ query_probably_has_dictionary_variable	plugged/rainbow_csv/rbql_core/rbql/rbql_e
 query_sqlite_to_csv	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^def query_sqlite_to_csv(query_text, db_connection, input_table_name, output_path, output_delim, output_policy, output_csv_encoding, output_warnings, user_init_code='', colorize_output=False):$/;"	f
 query_table	plugged/rainbow_csv/rbql_core/rbql/__init__.py	/^from .rbql_engine import query_table$/;"	i
 query_table	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def query_table(query_text, input_table, output_table, output_warnings, join_table=None, input_column_names=None, join_column_names=None, normalize_column_names=True, user_init_code=''):$/;"	f
+quickfix	plugged/vim-fireplace/pythonx/fireplace.py	/^def quickfix(t, e, tb):$/;"	f
 quote_field	plugged/rainbow_csv/rbql_core/rbql/csv_utils.py	/^def quote_field(src, delim):$/;"	f
 quote_fields	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^    def quote_fields(self, fields):$/;"	m	class:CSVWriter
 quote_fields_rfc	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^    def quote_fields_rfc(self, fields):$/;"	m	class:CSVWriter
@@ -4257,18 +4506,24 @@ re	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^import re$/;"	i
 re	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import re$/;"	i
 re	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^import re$/;"	i
 re	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^import re$/;"	i
+re	plugged/vim-fireplace/pythonx/fireplace.py	/^import re$/;"	i
+read	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:read(str, pos) abort$/;"	f
 read	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^    def read(self, cnt):$/;"	m	class:SocketToStream
 read_table_names	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^def read_table_names(db_connection):$/;"	f
+read_token	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:read_token(str, pos) abort$/;"	f
 read_user_init_code	plugged/rainbow_csv/rbql_core/rbql-js/rbql_csv.js	/^function read_user_init_code(rbql_init_source_path) {$/;"	f
 read_user_init_code	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^def read_user_init_code(rbql_init_source_path):$/;"	f
 read_virtual_header	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^func! s:read_virtual_header(delim, policy)$/;"	f
 readline	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^        import readline # Module readline is not available on Windows$/;"	i
 reap	autoload/plug.vim	/^function! s:reap(name)$/;"	f
+recall	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:recall() abort$/;"	f
+receive	plugged/vim-fireplace/pythonx/fireplace.py	/^    def receive(self, char=None):$/;"	m	class:Connection
 reflect_kind	plugged/vim-go/autoload/go/debug.vim	/^function! s:reflect_kind(k)$/;"	f
 refreshCurrent	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:refreshCurrent(node) abort$/;"	f
 refreshGitStatus	plugged/nerdtree-git-plugin/nerdtree_plugin/git_status.vim	/^function! s:refreshGitStatus(name, workdir) abort$/;"	f
 refreshRoot	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:refreshRoot() abort$/;"	f
 regexp_escape	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^function regexp_escape(text) {$/;"	f
+register	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:register(session, ...) abort$/;"	f
 register	plugged/vim-go/plugin/go.vim	/^function! s:register()$/;"	f
 regress_bar	autoload/plug.vim	/^function! s:regress_bar()$/;"	f
 reindent	plugged/vim-elixir/spec/spec_helper.rb	/^  def reindent(content)$/;"	f	class:Buffer
@@ -4285,6 +4540,16 @@ rename	plugged/vim-go/autoload/go/lsp.vim	/^function! s:rename(fname, line, col,
 renameBuffer	plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! s:renameBuffer(bufNum, newNodeName, isDirectory)$/;"	f
 rename_job	plugged/vim-go/autoload/go/rename.vim	/^function s:rename_job(args)$/;"	f
 reorg_rtp	autoload/plug.vim	/^function! s:reorg_rtp()$/;"	f
+repl.Client	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:repl.Client() dict abort$/;"	f
+repl.Eval	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:repl.Eval(...) dict abort$/;"	f
+repl.HasOp	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:repl.HasOp(op) abort$/;"	f
+repl.Path	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:repl.Path() dict abort$/;"	f
+repl.Session	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:repl.Session() dict abort$/;"	f
+repl.done	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:repl.done(id) dict abort$/;"	f
+repl.message	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:repl.message(payload, ...) dict abort$/;"	f
+repl.preload	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:repl.preload(lib) dict abort$/;"	f
+repl_ns	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:repl_ns(...) abort$/;"	f
+replaceBuffer	plugged/vim-cljfmt/plugin/cljfmt.vim	/^function! s:replaceBuffer(content) abort$/;"	f
 replace_all	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^function replace_all(src, search, replacement) {$/;"	f
 replace_filename	plugged/vim-go/autoload/go/fmt.vim	/^function! s:replace_filename(filename, content) abort$/;"	f
 replace_star_count	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def replace_star_count(aggregate_expression):$/;"	f
@@ -4310,6 +4575,7 @@ report_error_to_vim	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^    def report_e
 request	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^    def request(cls, vimsock, channel, reqid, event, args, rspid):$/;"	m	class:NvimHandler
 requestComplete	plugged/vim-go/autoload/go/lsp.vim	/^function! s:requestComplete(ok) abort dict$/;"	f
 request_queue	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^request_queue = Queue()$/;"	v
+require	plugged/vim-clojure-highlight/autoload/vim_clojure_highlight.vim	/^function! s:require()$/;"	f
 requires_segment_info	plugged/vim-devicons/pythonx/vim_devicons/powerline/segments.py	/^from powerline.theme import requires_segment_info$/;"	i
 resend_confirmation	plugged/vim-elixir/spec/indent/with_spec.rb	/^  def resend_confirmation(username) when is_binary(username) do$/;"	f
 reset	plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:reset() abort dict$/;"	f
@@ -4439,10 +4705,17 @@ s:buffer_seqno	plugged/tagbar/autoload/tagbar.vim	/^let s:buffer_seqno = 0$/;"	v
 s:bufnameprefix	plugged/vim-go/autoload/go/term.vim	/^let s:bufnameprefix = 'goterm:\/\/'$/;"	v
 s:checked_ctags	plugged/tagbar/autoload/tagbar.vim	/^let s:checked_ctags       = 0$/;"	v
 s:checked_ctags_types	plugged/tagbar/autoload/tagbar.vim	/^let s:checked_ctags_types = 0$/;"	v
+s:clj	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:clj = {$/;"	v
+s:clj	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:clj = {}$/;"	v
+s:clj_delegate	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:clj_delegate = extend(copy(s:clj), s:delegate)$/;"	v
+s:cljs	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:cljs = {$/;"	v
+s:cljs_delegate	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:cljs_delegate = extend(copy(s:cljs), s:delegate)$/;"	v
+s:clojure_syntax_keywords	plugged/vim-clojure-static/syntax/clojure.vim	/^let s:clojure_syntax_keywords = {$/;"	v
 s:cmd	plugged/vim-elixir/autoload/db/adapter/ecto.vim	/^let s:cmd = join(['mix', 'run', '--no-start', '--no-compile', shellescape(s:path.'\/get_repos.exs')])$/;"	v
 s:colors	plugged/eleline.vim/plugin/eleline.vim	/^let s:colors = {$/;"	v
 s:colors_name	plugged/seoul256.vim/colors/seoul256.vim	/^let s:colors_name = get(g:, 'colors_name', '')$/;"	v
 s:column	plugged/vim-devicons/autoload/vimfiler/columns/devicons.vim	/^let s:column = {$/;"	v
+s:common	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:common = {'Query': function('s:EvalQuery')}$/;"	v
 s:commondirs	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:commondirs = {}$/;"	v
 s:compare_typeinfo	plugged/tagbar/autoload/tagbar/sorting.vim	/^let s:compare_typeinfo = {}$/;"	v
 s:completions	plugged/vim-go/autoload/go/complete.vim	/^    let s:completions = l:state.matches$/;"	v
@@ -4453,7 +4726,9 @@ s:concealcode	plugged/vim-markdown/syntax/markdown.vim	/^let s:concealcode = ''$
 s:concealends	plugged/vim-markdown/syntax/markdown.vim	/^  let s:concealends = ' concealends'$/;"	v
 s:concealends	plugged/vim-markdown/syntax/markdown.vim	/^let s:concealends = ''$/;"	v
 s:config	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:config = {}$/;"	v
+s:cpo_sav	plugged/vim-clojure-static/syntax/clojure.vim	/^let s:cpo_sav = &cpo$/;"	v
 s:cpo_save	autoload/plug.vim	/^let s:cpo_save = &cpo$/;"	v
+s:cpo_save	plugged/vim-clojure-static/ftplugin/clojure.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	plugged/vim-elixir/compiler/exunit.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	plugged/vim-elixir/indent/eelixir.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	plugged/vim-elixir/syntax/eelixir.vim	/^let s:cpo_save = &cpo$/;"	v
@@ -4559,9 +4834,13 @@ s:default_list_type_commands	plugged/vim-go/autoload/go/list.vim	/^let s:default
 s:default_metalinter	plugged/vim-go/autoload/go/config.vim	/^let s:default_metalinter = 'staticcheck'$/;"	v
 s:default_vals	plugged/nerdtree-git-plugin/nerdtree_plugin/git_status.vim	/^let s:default_vals = {$/;"	v
 s:delayed_update_files	plugged/tagbar/autoload/tagbar.vim	/^let s:delayed_update_files = []$/;"	v
+s:delegate	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:delegate = {$/;"	v
 s:delimiterMap	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^let s:delimiterMap = {$/;"	v
 s:did_check_exe	plugged/vim-gutentags/autoload/gutentags/ctags.vim	/^let s:did_check_exe = 0$/;"	v
 s:diff_cmd	plugged/vim-better-whitespace/plugin/better-whitespace.vim	/^let s:diff_cmd=g:diff_binary.' -a --unchanged-group-format="" --old-group-format="" --new-group-format="%dF,%dL " --changed-group-format="%dF,%dL " '$/;"	v
+s:dir	plugged/vim-clojure-static/ftplugin/clojure.vim	/^		let s:dir = fnameescape(s:dir)$/;"	v
+s:dir	plugged/vim-clojure-static/ftplugin/clojure.vim	/^		let s:dir = substitute(s:dir, '\\ ', '\\\\ ', 'g')$/;"	v
+s:dir	plugged/vim-clojure-static/ftplugin/clojure.vim	/^		let s:dir = substitute(s:dir, '\\', '\\\\\\\\', 'g')$/;"	v
 s:dir	plugged/vim-go/scripts/runtest.vim	/^let s:dir = expand('%:p:h')$/;"	v
 s:dirArrows	plugged/nerdtree/syntax/nerdtree.vim	/^    let s:dirArrows = escape(g:NERDTreeDirArrowCollapsible, '~]\\-').escape(g:NERDTreeDirArrowExpandable, '~]\\-')$/;"	v
 s:dir_for_worktree	plugged/vim-fugitive/plugin/fugitive.vim	/^let s:dir_for_worktree = {}$/;"	v
@@ -4623,9 +4902,11 @@ s:gui_or_cterm	plugged/nerdtree-dash/syntax/nerdtree.vim	/^let s:gui_or_cterm = 
 s:hash_colors	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:hash_colors = {}$/;"	v
 s:head_cache	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:head_cache = {}$/;"	v
 s:headersRegexp	plugged/vim-markdown/ftplugin/markdown.vim	/^let s:headersRegexp = '\\v^(#|.+\\n(\\=+|-+)$)'$/;"	v
+s:history	plugged/vim-fireplace/autoload/fireplace.vim	/^  let s:history = []$/;"	v
 s:hl_group	plugged/nerdtree-dash/syntax/nerdtree.vim	/^let s:hl_group = {$/;"	v
 s:ics	plugged/tagbar/syntax/tagbar.vim	/^let s:ics = escape(join(g:tagbar_iconchars, ''), ']^\\-')$/;"	v
 s:id	plugged/nvim-yarp/autoload/yarp/core.vim	/^let s:id = 1$/;"	v
+s:id	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^  let s:id = 0$/;"	v
 s:id	plugged/vim-go/autoload/ctrlp/decls.vim	/^let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)$/;"	v
 s:import_paths	plugged/vim-go/autoload/go/package.vim	/^let s:import_paths = {}$/;"	v
 s:in_gopath	plugged/vim-go/autoload/go/package.vim	/^let s:in_gopath = {}$/;"	v
@@ -4639,6 +4920,7 @@ s:is_maximized	plugged/tagbar/autoload/tagbar.vim	/^let s:is_maximized    = 0$/;
 s:is_win	autoload/plug.vim	/^let s:is_win = has('win32')$/;"	v
 s:is_win	plugged/eleline.vim/plugin/eleline.vim	/^let s:is_win = has('win32')$/;"	v
 s:is_win	plugged/nerdtree-git-plugin/nerdtree_plugin/git_status.vim	/^let s:is_win = gitstatus#isWin()$/;"	v
+s:iskeyword	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:iskeyword = '[[:alnum:]_=?!#$%&*+|.\/<>:''-]'$/;"	v
 s:italics	plugged/vim-solarized8/colors/solarized8.vim	/^let s:italics = (&t_ZH != '' && &t_ZH != '[7m') || has('gui_running') || has('nvim')$/;"	v
 s:italics	plugged/vim-solarized8/colors/solarized8.vim	/^let s:italics = s:italics && get(g:, 'solarized_italics', 1)$/;"	v
 s:italics	plugged/vim-solarized8/colors/solarized8_flat.vim	/^let s:italics = (&t_ZH != '' && &t_ZH != '[7m') || has('gui_running') || has('nvim')$/;"	v
@@ -4648,6 +4930,7 @@ s:italics	plugged/vim-solarized8/colors/solarized8_high.vim	/^let s:italics = s:
 s:italics	plugged/vim-solarized8/colors/solarized8_low.vim	/^let s:italics = (&t_ZH != '' && &t_ZH != '[7m') || has('gui_running') || has('nvim')$/;"	v
 s:italics	plugged/vim-solarized8/colors/solarized8_low.vim	/^let s:italics = s:italics && get(g:, 'solarized_italics', 1)$/;"	v
 s:item_pattern	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:item_pattern = s:file_commit_pattern . '\\|^@@'$/;"	v
+s:jar_contents	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:jar_contents = {}$/;"	v
 s:jobs	plugged/eleline.vim/plugin/eleline.vim	/^let s:jobs = {}$/;"	v
 s:jobstart	plugged/nvim-yarp/autoload/yarp/core.vim	/^    let s:jobstart = 'jobstart'$/;"	v
 s:jobstart	plugged/nvim-yarp/autoload/yarp/core.vim	/^    let s:jobstart = get(g:, 'yarp_jobstart', 'neovim_rpc#jobstart')$/;"	v
@@ -4699,6 +4982,7 @@ s:named_syntax_map	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^let s:named_sy
 s:nearby_disabled	plugged/tagbar/autoload/tagbar.vim	/^let s:nearby_disabled = 0$/;"	v
 s:need_migrate_vals	plugged/nerdtree-git-plugin/nerdtree_plugin/git_status.vim	/^let s:need_migrate_vals = {$/;"	v
 s:new_window	plugged/tagbar/autoload/tagbar.vim	/^let s:new_window      = 1$/;"	v
+s:no_repl	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:no_repl = 'Fireplace: no live REPL connection'$/;"	v
 s:normal_bg	plugged/eleline.vim/plugin/eleline.vim	/^  let s:normal_bg = s:extract('Normal', 'bg', 'cterm')$/;"	v
 s:normal_bg	plugged/nerdtree-dash/syntax/nerdtree.vim	/^  let s:normal_bg = 'NONE'$/;"	v
 s:normal_bg	plugged/nerdtree-dash/syntax/nerdtree.vim	/^let s:normal_bg = s:get_color('Normal', 'bg')$/;"	v
@@ -4709,6 +4993,12 @@ s:nvim	plugged/nerdtree-git-plugin/autoload/gitstatus/job.vim	/^let s:nvim = has
 s:old_cpo	plugged/nerdtree/plugin/NERD_tree.vim	/^let s:old_cpo = &cpoptions$/;"	v
 s:oneline	plugged/vim-markdown/syntax/markdown.vim	/^    let s:oneline = ' oneline'$/;"	v
 s:oneline	plugged/vim-markdown/syntax/markdown.vim	/^    let s:oneline = ''$/;"	v
+s:oneoff	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:oneoff = extend(copy(s:clj), s:common)$/;"	v
+s:oneoff	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:oneoff.Message = s:oneoff.Session$/;"	v
+s:oneoff	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:oneoff.eval = s:oneoff.Eval$/;"	v
+s:oneoff	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:oneoff.message = s:oneoff.Session$/;"	v
+s:oneoff	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:oneoff.path = s:oneoff.Path$/;"	v
+s:oneoff	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:oneoff.user_ns = s:repl.UserNs$/;"	v
 s:packages	plugged/vim-go/plugin/go.vim	/^let s:packages = {$/;"	v
 s:path	plugged/vim-elixir/autoload/db/adapter/ecto.vim	/^let s:path = expand('<sfile>:h')$/;"	v
 s:path_subcommands	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:path_subcommands = {}$/;"	v
@@ -4719,6 +5009,8 @@ s:pattern	plugged/tagbar/syntax/tagbar.vim	/^let s:pattern = '\\(\\S\\@<![' . s:
 s:pattern	plugged/tagbar/syntax/tagbar.vim	/^let s:pattern = '\\(^[' . s:ics . '] \\?\\)\\@3<=[^-+: ]\\+[^:]\\+$'$/;"	v
 s:pattern	plugged/tagbar/syntax/tagbar.vim	/^let s:pattern = '\\S\\@<![' . s:ics . ']\\([-+# ]\\?\\)\\@='$/;"	v
 s:paused	plugged/tagbar/autoload/tagbar.vim	/^let s:paused = 0$/;"	v
+s:piggieback	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:piggieback = extend(copy(s:repl), s:cljs)$/;"	v
+s:piggieback	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:piggieback.user_ns = s:piggieback.UserNs$/;"	v
 s:plug_buf	autoload/plug.vim	/^let s:plug_buf = get(s:, 'plug_buf', -1)$/;"	v
 s:plug_src	autoload/plug.vim	/^let s:plug_src = 'https:\/\/github.com\/junegunn\/vim-plug.git'$/;"	v
 s:plug_tab	autoload/plug.vim	/^let s:plug_tab = get(s:, 'plug_tab', -1)$/;"	v
@@ -4728,7 +5020,10 @@ s:pwin_by_tagbar	plugged/tagbar/autoload/tagbar.vim	/^let s:pwin_by_tagbar = 0$/
 s:pyeval	plugged/vim-hug-neovim-rpc/autoload/neovim_rpc.vim	/^    let s:pyeval = function('py3eval')$/;"	v
 s:pyeval	plugged/vim-hug-neovim-rpc/autoload/neovim_rpc.vim	/^    let s:pyeval = function('pyeval')$/;"	v
 s:pyeval	plugged/vim-hug-neovim-rpc/autoload/neovim_rpc.vim	/^    let s:pyeval = function('pyxeval')$/;"	v
+s:python_dir	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^let s:python_dir = fnamemodify(expand("<sfile>"), ':p:h:h:h') . '\/pythonx'$/;"	v
 s:python_env_initialized	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^let s:python_env_initialized = 0$/;"	v
+s:qffiles	plugged/vim-fireplace/autoload/fireplace.vim	/^  let s:qffiles = {}$/;"	v
+s:radix_chars	plugged/vim-clojure-static/syntax/clojure.vim	/^let s:radix_chars = "0123456789abcdefghijklmnopqrstuvwxyz"$/;"	v
 s:rainbow_conf	plugged/rainbow/autoload/rainbow_main.vim	/^let s:rainbow_conf = {$/;"	v
 s:rainbow_table_index	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^let s:rainbow_table_index = exists('g:rainbow_table_index') ? g:rainbow_table_index : $HOME . '\/.rbql_table_index'$/;"	v
 s:rb_storage_dir	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^let s:rb_storage_dir = exists('g:rb_storage_dir') ? g:rb_storage_dir : $HOME . '\/.rainbow_csv_storage'$/;"	v
@@ -4737,6 +5032,16 @@ s:redirects	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:redirects = {}$/;
 s:ref_header	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:ref_header = '\\%(Merge\\|Rebase\\|Upstream\\|Pull\\|Push\\)'$/;"	v
 s:reg	plugged/nvim-yarp/autoload/yarp/core.vim	/^    let s:reg[rp.id] = rp$/;"	v
 s:reg	plugged/nvim-yarp/autoload/yarp/core.vim	/^let s:reg = {}$/;"	v
+s:repl	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:repl = extend(extend({"requires": {}}, s:clj), s:common)$/;"	v
+s:repl	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:repl.Done = s:repl.done$/;"	v
+s:repl	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:repl.Message = s:repl.message$/;"	v
+s:repl	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:repl.Preload = s:repl.preload$/;"	v
+s:repl	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:repl.eval = s:repl.Eval$/;"	v
+s:repl	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:repl.path = s:repl.Path$/;"	v
+s:repl	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:repl.user_ns = s:repl.UserNs$/;"	v
+s:repl_paths	plugged/vim-fireplace/autoload/fireplace.vim	/^  let s:repl_paths = {}$/;"	v
+s:repl_portfiles	plugged/vim-fireplace/autoload/fireplace.vim	/^  let s:repl_portfiles = {}$/;"	v
+s:repls	plugged/vim-fireplace/autoload/fireplace.vim	/^  let s:repls = []$/;"	v
 s:repo_prototype	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:repo_prototype = {}$/;"	v
 s:report	plugged/vim-go/scripts/runbench.vim	/^let s:report = execute('syntime report')$/;"	v
 s:repos	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:repos = {}$/;"	v
@@ -4752,6 +5057,7 @@ s:runner_exe	plugged/vim-gutentags/autoload/gutentags/cscope.vim	/^let s:runner_
 s:runner_exe	plugged/vim-gutentags/autoload/gutentags/ctags.vim	/^let s:runner_exe = '"' . gutentags#get_plat_file('update_tags') . '"'$/;"	v
 s:save_cpo	plugged/eleline.vim/plugin/eleline.vim	/^let s:save_cpo = &cpoptions$/;"	v
 s:save_cpo	plugged/tabular/after/plugin/TabularMaps.vim	/^let s:save_cpo = &cpo$/;"	v
+s:save_cpo	plugged/vim-clojure-static/indent/clojure.vim	/^let s:save_cpo = &cpo$/;"	v
 s:save_cpo	plugged/vim-devicons/autoload/vimfiler/columns/devicons.vim	/^let s:save_cpo = &cpo$/;"	v
 s:save_cpo	plugged/vim-devicons/plugin/webdevicons.vim	/^let s:save_cpo = &cpo$/;"	v
 s:save_cpo	plugged/vim-elixir/ftplugin/eelixir.vim	/^let s:save_cpo = &cpo$/;"	v
@@ -4765,10 +5071,13 @@ s:section_pattern	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:section_pat
 s:seoul256_background	plugged/seoul256.vim/colors/seoul256.vim	/^  let s:seoul256_background = g:seoul256_background$/;"	v
 s:serveraddr	plugged/nvim-yarp/autoload/yarp/core.vim	/^    let s:serveraddr = function('s:_serveraddr')$/;"	v
 s:serveraddr	plugged/nvim-yarp/autoload/yarp/core.vim	/^    let s:serveraddr = get(g:, 'yarp_serveraddr', 'neovim_rpc#serveraddr')$/;"	v
+s:session	plugged/vim-fireplace/autoload/fireplace/session.vim	/^let s:session = {$/;"	v
 s:short_help	plugged/tagbar/autoload/tagbar.vim	/^let s:short_help      = 1$/;"	v
+s:short_types	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:short_types = {$/;"	v
 s:singular_types	plugged/tagbar/autoload/tagbar.vim	/^let s:singular_types = {$/;"	v
 s:source	plugged/vim-go/autoload/unite/sources/decls.vim	/^let s:source = {$/;"	v
 s:spaceStr	plugged/nerdcommenter/plugin/NERD_commenter.vim	/^let s:spaceStr = ' '$/;"	v
+s:spawns	plugged/vim-fireplace/autoload/fireplace.vim	/^  let s:spawns = {}$/;"	v
 s:start_args	plugged/vim-go/autoload/go/debug.vim	/^  let s:start_args = []$/;"	v
 s:started	plugged/vim-go/scripts/runtest.vim	/^  let s:started = reltime()$/;"	v
 s:state	plugged/vim-go/autoload/go/debug.vim	/^  let s:state = {$/;"	v
@@ -4796,6 +5105,7 @@ s:t_Co	plugged/vim-solarized8/colors/solarized8_high.vim	/^let s:t_Co = get(g:, 
 s:t_Co	plugged/vim-solarized8/colors/solarized8_low.vim	/^let s:t_Co = exists('&t_Co') && !empty(&t_Co) && &t_Co > 1 ? &t_Co : 2$/;"	v
 s:t_Co	plugged/vim-solarized8/colors/solarized8_low.vim	/^let s:t_Co = get(g:, 'solarized_use16', 0) ? 16 : s:t_Co$/;"	v
 s:table_names_settings	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^let s:table_names_settings = exists('g:table_names_settings') ? g:table_names_settings : $HOME . '\/.rbql_table_names'$/;"	v
+s:tag_file	plugged/vim-fireplace/autoload/fireplace.vim	/^  let s:tag_file = tempname() . '.fireplace.tags'$/;"	v
 s:temp_files	plugged/vim-fugitive/autoload/fugitive.vim	/^  let s:temp_files = {}$/;"	v
 s:temp_scripts	plugged/vim-fugitive/autoload/fugitive.vim	/^  let s:temp_scripts = {}$/;"	v
 s:templatepath	plugged/vim-go/autoload/go/issue.vim	/^let s:templatepath = go#util#Join(expand('<sfile>:p:h:h:h'), '.github', 'ISSUE_TEMPLATE.md')$/;"	v
@@ -4808,8 +5118,10 @@ s:tests	plugged/vim-go/scripts/runtest.vim	/^let s:tests = split(substitute(@q, 
 s:timer_id	plugged/vim-go/autoload/go/auto.vim	/^let s:timer_id = 0$/;"	v
 s:timer_id	plugged/vim-go/autoload/go/statusline.vim	/^let s:timer_id = 0$/;"	v
 s:toggle	plugged/vim-go/autoload/go/coverage.vim	/^let s:toggle = 0$/;"	v
+s:token	plugged/vim-fireplace/autoload/fireplace.vim	/^let s:token = '^\\%(#"\\%(\\\\\\@<!\\%(\\\\\\\\\\)*\\\\"\\|[^"]\\)*"\\|"\\%(\\\\.\\|[^"]\\)*"\\|[[:space:],]\\+\\|\\%(;\\|#!\\)[^'."\\n".']*\\|\\~@\\|#[[:punct:]]\\|''\\@!'.s:iskeyword.'\\+\\|\\\\\\%(space\\|tab\\|newline\\|return\\|.\\)\\|.\\)'$/;"	v
 s:total_elapsed_time	plugged/vim-go/scripts/runtest.vim	/^let s:total_elapsed_time = substitute(reltimestr(reltime(s:total_started)), '^\\s*\\(.\\{-}\\)\\s*$', '\\1', '')$/;"	v
 s:total_started	plugged/vim-go/scripts/runtest.vim	/^let s:total_started = reltime()$/;"	v
+s:transport	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^let s:transport = {$/;"	v
 s:tree_up_dir_line	plugged/nerdtree/syntax/nerdtree.vim	/^let s:tree_up_dir_line = '.. (up a dir)'$/;"	v
 s:trees	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:trees = {}$/;"	v
 s:triggers	autoload/plug.vim	/^let s:triggers = get(s:, 'triggers', {})$/;"	v
@@ -4834,12 +5146,14 @@ s:update_in_progress	plugged/vim-gutentags/autoload/gutentags.vim	/^    let s:up
 s:update_in_progress	plugged/vim-gutentags/autoload/gutentags.vim	/^let s:update_in_progress = {}$/;"	v
 s:update_queue	plugged/vim-gutentags/autoload/gutentags.vim	/^    let s:update_queue[module] = []$/;"	v
 s:update_queue	plugged/vim-gutentags/autoload/gutentags.vim	/^let s:update_queue = {}$/;"	v
+s:urls	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^  let s:urls = {}$/;"	v
 s:use_gui	plugged/nerdtree-dash/syntax/nerdtree.vim	/^let s:use_gui = has('gui_running') || (has('termguicolors') && &termguicolors)$/;"	v
 s:var	plugged/vim-fugitive/autoload/fugitive.vim	/^let s:var = '\\%(<\\%(cword\\|cWORD\\|cexpr\\|cfile\\|sfile\\|slnum\\|afile\\|abuf\\|amatch' . (has('clientserver') ? '\\|client' : '') . '\\)>\\|%\\|#<\\=\\d\\+\\|##\\=\\)'$/;"	v
 s:var_found	plugged/seoul256.vim/colors/seoul256-light.vim	/^let s:var_found = exists('g:seoul256_background')$/;"	v
 s:version	plugged/vim-devicons/plugin/webdevicons.vim	/^let s:version = '0.11.0'$/;"	v
 s:vim8	autoload/plug.vim	/^let s:vim8 = has('patch-8.0.0039') && exists('*job_start')$/;"	v
 s:vim8	plugged/nerdtree-git-plugin/autoload/gitstatus/job.vim	/^let s:vim8 = has('patch-8.0.0039') && exists('*job_start')$/;"	v
+s:vim_id	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^  let s:vim_id = 'fireplace-' . hostname() . '-' . localtime()$/;"	v
 s:vim_markdown_folding_level	plugged/vim-markdown/after/ftplugin/markdown.vim	/^let s:vim_markdown_folding_level = get(g:, "vim_markdown_folding_level", 1)$/;"	v
 s:vim_quitting	plugged/tagbar/autoload/tagbar.vim	/^let s:vim_quitting = 0$/;"	v
 s:visibility_symbols	plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^    let s:visibility_symbols = g:tagbar_visibility_symbols$/;"	v
@@ -4851,6 +5165,7 @@ s:wildignores_options_path	plugged/vim-gutentags/autoload/gutentags/ctags.vim	/^
 s:window_expanded	plugged/tagbar/autoload/tagbar.vim	/^let s:window_expanded   = 0$/;"	v
 s:window_pos	plugged/tagbar/autoload/tagbar.vim	/^let s:window_pos = {$/;"	v
 s:winrestcmd	plugged/tagbar/autoload/tagbar.vim	/^let s:winrestcmd      = ''$/;"	v
+s:words	plugged/vim-clojure-static/autoload/clojurecomplete.vim	/^let s:words = ["*","*'","*1","*2","*3","*agent*","*allow-unresolved-vars*","*assert*","*clojure-version*","*command-line-args*","*compile-files*","*compile-path*","*compiler-options*","*data-readers*","*default-data-reader-fn*","*e","*err*","*file*","*flush-on-newline*","*fn-loader*","*in*","*math-context*","*ns*","*out*","*print-dup*","*print-length*","*print-level*","*print-meta*","*print-readably*","*read-eval*","*source-path*","*suppress-read*","*unchecked-math*","*use-context-classloader*","*verbose-defrecords*","*warn-on-reflection*","+","+'","-","-'","->","->>","->ArrayChunk","->Eduction","->Vec","->VecNode","->VecSeq","-cache-protocol-fn","-reset-methods",".","..","\/","<","<=","=","==",">",">=","EMPTY-NODE","Throwable->map","accessor","aclone","add-classpath","add-watch","agent","agent-error","agent-errors","aget","alength","alias","all-ns","alter","alter-meta!","alter-var-root","amap","ancestors","and","apply","areduce","array-map","as->","aset","aset-boolean","aset-byte","aset-char","aset-double","aset-float","aset-int","aset-long","aset-short","assert","assoc!","assoc","assoc-in","associative?","atom","await","await-for","await1","bases","bean","bigdec","bigint","biginteger","binding","bit-and","bit-and-not","bit-clear","bit-flip","bit-not","bit-or","bit-set","bit-shift-left","bit-shift-right","bit-test","bit-xor","boolean","boolean-array","booleans","bound-fn","bound-fn*","bound?","butlast","byte","byte-array","bytes","case","cast","cat","catch","char","char-array","char-escape-string","char-name-string","char?","chars","chunk","chunk-append","chunk-buffer","chunk-cons","chunk-first","chunk-next","chunk-rest","chunked-seq?","class","class?","clear-agent-errors","clojure-version","coll?","comment","commute","comp","comparator","compare","compare-and-set!","compile","complement","completing","concat","cond","cond->","cond->>","condp","conj!","conj","cons","constantly","construct-proxy","contains?","count","counted?","create-ns","create-struct","cycle","dec","dec'","decimal?","declare","dedupe","def","default-data-readers","definline","definterface","defmacro","defmethod","defmulti","defn","defn-","defonce","defprotocol","defrecord","defstruct","deftype","delay","delay?","deliver","denominator","deref","derive","descendants","destructure","disj!","disj","dissoc!","dissoc","distinct","distinct?","do","doall","dorun","doseq","dosync","dotimes","doto","double","double-array","doubles","drop","drop-last","drop-while","eduction","empty","empty?","ensure","ensure-reduced","enumeration-seq","error-handler","error-mode","eval","even?","every-pred","every?","ex-data","ex-info","extend","extend-protocol","extend-type","extenders","extends?","false?","ffirst","file-seq","filter","filterv","finally","find","find-keyword","find-ns","find-protocol-impl","find-protocol-method","find-var","first","flatten","float","float-array","float?","floats","flush","fn","fn","fn?","fnext","fnil","for","force","format","frequencies","future","future-call","future-cancel","future-cancelled?","future-done?","future?","gen-class","gen-interface","gensym","get","get-in","get-method","get-proxy-class","get-thread-bindings","get-validator","group-by","hash","hash-combine","hash-map","hash-ordered-coll","hash-set","hash-unordered-coll","identical?","identity","if","if-let","if-not","if-some","ifn?","import","in-ns","inc","inc'","init-proxy","instance?","int","int-array","integer?","interleave","intern","interpose","into","into-array","ints","io!","isa?","iterate","iterator-seq","juxt","keep","keep-indexed","key","keys","keyword","keyword?","last","lazy-cat","lazy-seq","let","let","letfn","line-seq","list","list*","list?","load","load-file","load-reader","load-string","loaded-libs","locking","long","long-array","longs","loop","loop","macroexpand","macroexpand-1","make-array","make-hierarchy","map","map-entry?","map-indexed","map?","mapcat","mapv","max","max-key","memfn","memoize","merge","merge-with","meta","method-sig","methods","min","min-key","mix-collection-hash","mod","monitor-enter","monitor-exit","munge","name","namespace","namespace-munge","neg?","new","newline","next","nfirst","nil?","nnext","not","not-any?","not-empty","not-every?","not=","ns","ns-aliases","ns-imports","ns-interns","ns-map","ns-name","ns-publics","ns-refers","ns-resolve","ns-unalias","ns-unmap","nth","nthnext","nthrest","num","number?","numerator","object-array","odd?","or","parents","partial","partition","partition-all","partition-by","pcalls","peek","persistent!","pmap","pop!","pop","pop-thread-bindings","pos?","pr","pr-str","prefer-method","prefers","primitives-classnames","print","print-ctor","print-dup","print-method","print-simple","print-str","printf","println","println-str","prn","prn-str","promise","proxy","proxy-call-with-super","proxy-mappings","proxy-name","proxy-super","push-thread-bindings","pvalues","quot","quote","rand","rand-int","rand-nth","random-sample","range","ratio?","rational?","rationalize","re-find","re-groups","re-matcher","re-matches","re-pattern","re-seq","read","read-line","read-string","reader-conditional","reader-conditional?","realized?","record?","recur","reduce","reduce-kv","reduced","reduced?","reductions","ref","ref-history-count","ref-max-history","ref-min-history","ref-set","refer","refer-clojure","reify","release-pending-sends","rem","remove","remove-all-methods","remove-method","remove-ns","remove-watch","repeat","repeatedly","replace","replicate","require","reset!","reset-meta!","resolve","rest","restart-agent","resultset-seq","reverse","reversible?","rseq","rsubseq","run!","satisfies?","second","select-keys","send","send-off","send-via","seq","seq?","seque","sequence","sequential?","set!","set","set-agent-send-executor!","set-agent-send-off-executor!","set-error-handler!","set-error-mode!","set-validator!","set?","short","short-array","shorts","shuffle","shutdown-agents","slurp","some","some->","some->>","some-fn","some?","sort","sort-by","sorted-map","sorted-map-by","sorted-set","sorted-set-by","sorted?","special-symbol?","spit","split-at","split-with","str","string?","struct","struct-map","subs","subseq","subvec","supers","swap!","symbol","symbol?","sync","tagged-literal","tagged-literal?","take","take-last","take-nth","take-while","test","the-ns","thread-bound?","throw","time","to-array","to-array-2d","trampoline","transduce","transient","tree-seq","true?","try","type","unchecked-add","unchecked-add-int","unchecked-byte","unchecked-char","unchecked-dec","unchecked-dec-int","unchecked-divide-int","unchecked-double","unchecked-float","unchecked-inc","unchecked-inc-int","unchecked-int","unchecked-long","unchecked-multiply","unchecked-multiply-int","unchecked-negate","unchecked-negate-int","unchecked-remainder-int","unchecked-short","unchecked-subtract","unchecked-subtract-int","underive","unquote","unquote-splicing","unreduced","unsigned-bit-shift-right","update","update-in","update-proxy","use","val","vals","var","var-get","var-set","var?","vary-meta","vec","vector","vector-of","vector?","volatile!","volatile?","vreset!","vswap!","when","when-first","when-let","when-not","when-some","while","with-bindings","with-bindings*","with-in-str","with-loading-context","with-local-vars","with-meta","with-open","with-out-str","with-precision","with-redefs","with-redefs-fn","xml-seq","zero?","zipmap"]$/;"	v
 s:worktree_for_dir	plugged/vim-fugitive/plugin/fugitive.vim	/^let s:worktree_for_dir = {}$/;"	v
 safe_get	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^function safe_get(record, idx) {$/;"	f
 safe_get	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def safe_get(record, idx):$/;"	f
@@ -4878,9 +5193,17 @@ select_simple	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def select_sim
 select_table_name_by_user_choice	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^def select_table_name_by_user_choice(db_connection):$/;"	f
 select_unnested	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^function select_unnested(sort_key, NR, folded_fields) {$/;"	f
 select_unnested	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def select_unnested(sort_key, folded_fields):$/;"	f
+send	plugged/vim-fireplace/pythonx/fireplace.py	/^    def send(self, payload):$/;"	m	class:Connection
 separate_actions	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def separate_actions(rbql_expression):$/;"	f
 separate_string_literals	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def separate_string_literals(rbql_expression):$/;"	f
 serveraddr	plugged/nvim-yarp/pythonx/yarp.py	/^serveraddr = sys.argv[1]$/;"	v
+session_callback	plugged/vim-fireplace/autoload/fireplace/session.vim	/^function! s:session_callback(msg) dict abort$/;"	f
+session_clone	plugged/vim-fireplace/autoload/fireplace/session.vim	/^function! s:session_clone(...) dict abort$/;"	f
+session_close	plugged/vim-fireplace/autoload/fireplace/session.vim	/^function! s:session_close() dict abort$/;"	f
+session_exists	plugged/vim-clojure-highlight/autoload/vim_clojure_highlight.vim	/^function! s:session_exists()$/;"	f
+session_has_op	plugged/vim-fireplace/autoload/fireplace/session.vim	/^function! s:session_has_op(op) dict abort$/;"	f
+session_message	plugged/vim-fireplace/autoload/fireplace/session.vim	/^function! s:session_message(msg, ...) dict abort$/;"	f
+session_path	plugged/vim-fireplace/autoload/fireplace/session.vim	/^function! s:session_path() dict abort$/;"	f
 set	plugged/vim-devicons/plugin/webdevicons.vim	/^function! s:set(var, default) abort$/;"	f
 setCursorHold	plugged/vim-devicons/plugin/webdevicons.vim	/^function! s:setCursorHold()$/;"	f
 setDiagnostics	plugged/vim-go/autoload/go/lsp.vim	/^function! s:setDiagnostics(...) abort$/;"	f
@@ -4894,6 +5217,15 @@ set_debug_mode	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^def set_debug_mo
 set_debug_mode	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def set_debug_mode():$/;"	f
 set_pattern	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^def set_pattern(variable: typing.Dict[str, str],$/;"	f
 set_source_attributes	plugged/deoplete.nvim/rplugin/python3/deoplete/parent.py	/^    def set_source_attributes(self, context: UserContext) -> None:$/;"	m	class:_Parent
+set_up_connect	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:set_up_connect() abort$/;"	f
+set_up_doc	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:set_up_doc() abort$/;"	f
+set_up_eval	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:set_up_eval() abort$/;"	f
+set_up_go_to_file	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:set_up_go_to_file() abort$/;"	f
+set_up_historical	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:set_up_historical() abort$/;"	f
+set_up_require	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:set_up_require() abort$/;"	f
+set_up_source	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:set_up_source() abort$/;"	f
+set_up_spec	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:set_up_spec() abort$/;"	f
+set_up_tests	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:set_up_tests() abort$/;"	f
 set_value	plugged/deoplete.nvim/autoload/deoplete/custom.vim	/^function! s:set_value(dest, name, value) abort$/;"	f
 set_vim_variable	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^    def set_vim_variable(self, var_name, value):$/;"	m	class:CLIVimMediator
 set_vim_variable	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^    def set_vim_variable(self, var_name, value):$/;"	m	class:VimInterface
@@ -4931,9 +5263,12 @@ sign_unplace	plugged/vim-go/autoload/go/debug.vim	/^function! s:sign_unplace(id,
 simple_join	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^def simple_join(fields, delim):$/;"	f
 sink	plugged/vim-go/autoload/fzf/decls.vim	/^function! s:sink(str) abort$/;"	f
 skip_header	plugged/rainbow_csv/rbql_core/rbql-js/cli_rbql.js	/^    var skip_header = args['skip-header'];$/;"	v
+slash	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:slash() abort$/;"	f
 smart_split	plugged/rainbow_csv/rbql_core/rbql/csv_utils.py	/^def smart_split(src, dlm, policy, preserve_quotes_and_whitespaces):$/;"	f
 smth	plugged/vim-elixir/spec/indent/ecto_queries_spec.rb	/^  def smth do$/;"	f
 snapshot	autoload/plug.vim	/^function! s:snapshot(force, ...) abort$/;"	f
+socket	plugged/vim-fireplace/pythonx/fireplace.py	/^    def socket(self):$/;"	m	class:Connection
+socket	plugged/vim-fireplace/pythonx/fireplace.py	/^import socket$/;"	i
 socket	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^import socket$/;"	i
 socketserver	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^    import SocketServer as socketserver$/;"	i
 socketserver	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^    import socketserver$/;"	i
@@ -4963,6 +5298,10 @@ source	plugged/vim-go/autoload/fzf/decls.vim	/^function! s:source(mode,...) abor
 source.gather_candidates	plugged/vim-go/autoload/unite/sources/decls.vim	/^function! s:source.gather_candidates(args, context) abort$/;"	f
 source.hooks.on_syntax	plugged/vim-go/autoload/unite/sources/decls.vim	/^function! s:source.hooks.on_syntax(args, context) abort$/;"	f
 spawn	autoload/plug.vim	/^function! s:spawn(name, cmd, opts)$/;"	f
+spawn_complete	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:spawn_complete(id, name, callback) abort$/;"	f
+spawn_eval	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:spawn_eval(id, classpath, expr, ns, callback) abort$/;"	f
+spawn_interrupt	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:spawn_interrupt(id) abort$/;"	f
+spawn_wait	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:spawn_wait(id, ...) abort$/;"	f
 split_lines	plugged/rainbow_csv/rbql_core/rbql-js/csv_utils.js	/^function split_lines(text) {$/;"	f
 split_quoted_str	plugged/rainbow_csv/rbql_core/rbql-js/csv_utils.js	/^function split_quoted_str(src, dlm, preserve_quotes_and_whitespaces=false) {$/;"	f
 split_quoted_str	plugged/rainbow_csv/rbql_core/rbql/csv_utils.py	/^def split_quoted_str(src, dlm, preserve_quotes_and_whitespaces=False):$/;"	f
@@ -4973,6 +5312,7 @@ sqlite3	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^        import sqlit
 sqlite_main	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^def sqlite_main():$/;"	f
 stable_compare	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^function stable_compare(a, b) {$/;"	f
 stack_cb	plugged/vim-go/autoload/go/debug.vim	/^function! s:stack_cb(res) abort$/;"	f
+stacktrace_list	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:stacktrace_list(all) abort$/;"	f
 start	plugged/vim-go/autoload/go/job.vim	/^function! s:start(args) dict$/;"	f
 start	plugged/vim-go/autoload/go/lsp.vim	/^function! s:start() abort dict$/;"	f
 start	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^def start():$/;"	f
@@ -4988,9 +5328,11 @@ status_escape_string	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^func! s:stat
 status_load	autoload/plug.vim	/^function! s:status_load(lnum)$/;"	f
 status_update	autoload/plug.vim	/^function! s:status_update() range$/;"	f
 still_have_issues	plugged/deoplete.nvim/autoload/health/deoplete.vim	/^function! s:still_have_issues() abort$/;"	f
+stop	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:stop(job) abort$/;"	f
 stop	plugged/vim-go/autoload/go/debug.vim	/^function! s:stop() abort$/;"	f
 stop	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^def stop():$/;"	f
 str	plugged/tagbar/autoload/tagbar/prototypes/normaltag.vim	/^function! s:str(longsig, full) abort dict$/;"	f
+str	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:str(string) abort$/;"	f
 str_strip	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^function str_strip(src) {$/;"	f
 strfmt	plugged/tagbar/autoload/tagbar/prototypes/normaltag.vim	/^function! s:strfmt() abort dict$/;"	f
 strfmt	plugged/tagbar/autoload/tagbar/prototypes/pseudotag.vim	/^function! s:strfmt() abort dict$/;"	f
@@ -5000,6 +5342,7 @@ strip	plugged/vim-devicons/plugin/webdevicons.vim	/^function! s:strip(input)$/;"
 strip_comments	plugged/rainbow_csv/rbql_core/rbql-js/rbql.js	/^function strip_comments(cline) {$/;"	f
 strip_comments	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def strip_comments(cline):$/;"	f
 strip_doc_blocks	plugged/vim-elixir/bin/test_indent	/^def strip_doc_blocks(body)$/;"	f
+strip_namespace_and_macro_chars	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:strip_namespace_and_macro_chars(word)$/;"	f
 strlen	plugged/vim-go/autoload/go/lsp/lsp.vim	/^function! s:strlen(str) abort$/;"	f
 strwidth	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^def strwidth(string: str) -> int:$/;"	f
 sub	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:sub(str,pat,rep) abort$/;"	f
@@ -5066,9 +5409,12 @@ switch_in	autoload/plug.vim	/^function! s:switch_in()$/;"	f
 switch_out	autoload/plug.vim	/^function! s:switch_out(...)$/;"	f
 synGroupID	plugged/rainbow/autoload/rainbow.vim	/^fun s:synGroupID(prefix, group, lv)$/;"	f
 synID	plugged/rainbow/autoload/rainbow.vim	/^fun s:synID(prefix, group, lv, id)$/;"	f
+syn_id_name	plugged/vim-clojure-static/indent/clojure.vim	/^	function! s:syn_id_name()$/;"	f
 sync_guru	plugged/vim-go/autoload/go/guru.vim	/^function! s:sync_guru(args) abort$/;"	f
 syntax	autoload/plug.vim	/^function! s:syntax()$/;"	f
 syntax	plugged/vim-elixir/spec/spec_helper.rb	/^  def syntax(content, pattern)$/;"	f	class:Buffer
+syntax_keyword	plugged/vim-clojure-static/syntax/clojure.vim	/^function! s:syntax_keyword(dict)$/;"	f
+syntax_match_references	plugged/vim-clojure-highlight/plugin/vim_clojure_highlight.vim	/^function! s:syntax_match_references()$/;"	f
 syntax_name	plugged/vim-elixir/autoload/elixir/indent.vim	/^function! s:syntax_name(line, col)$/;"	f
 sys	plugged/deoplete.nvim/autoload/deoplete/_main.py	/^import sys$/;"	i
 sys	plugged/deoplete.nvim/rplugin/python3/deoplete/child.py	/^import sys$/;"	i
@@ -5084,6 +5430,7 @@ sys	plugged/rainbow_csv/rbql_core/rbql/rbql_main.py	/^import sys$/;"	i
 sys	plugged/rainbow_csv/rbql_core/rbql/rbql_sqlite.py	/^import sys$/;"	i
 sys	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^import sys$/;"	i
 sys	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^import sys$/;"	i
+sys	plugged/vim-fireplace/pythonx/fireplace.py	/^import sys$/;"	i
 sys	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_protocol.py	/^import sys$/;"	i
 sys	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^import sys$/;"	i
 system	autoload/plug.vim	/^function! s:system(cmd, ...)$/;"	f
@@ -5139,6 +5486,7 @@ tagbar#state#set_paused	plugged/tagbar/autoload/tagbar/state.vim	/^function! tag
 tagbar#toggle_pause	plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#toggle_pause() abort$/;"	f
 tagbar#types#ctags#init	plugged/tagbar/autoload/tagbar/types/ctags.vim	/^function! tagbar#types#ctags#init(supported_types) abort$/;"	f
 tagbar#types#uctags#init	plugged/tagbar/autoload/tagbar/types/uctags.vim	/^function! tagbar#types#uctags#init(supported_types) abort$/;"	f
+temp_response	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:temp_response(response, ext) abort$/;"	f
 tempfile	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^import tempfile$/;"	i
 tempfile	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^import tempfile$/;"	i
 test	plugged/rainbow/tests/test.pl	/^sub test {$/;"	s
@@ -5197,6 +5545,7 @@ test_utf_decoding_errors	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^
 test_whitespace_separated_parsing	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^    def test_whitespace_separated_parsing(self):$/;"	m	class:TestRecordIterator
 textDocumentPositionParams	plugged/vim-go/autoload/go/lsp/message.vim	/^function! s:textDocumentPositionParams(fname, line, col) abort$/;"	f
 textEditLess	plugged/vim-go/autoload/go/lsp.vim	/^function! s:textEditLess(left, right) abort$/;"	f
+threading	plugged/vim-fireplace/pythonx/fireplace.py	/^import threading$/;"	i
 threading	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^import threading$/;"	i
 throw	plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:throw(string) abort$/;"	f
 tick	autoload/plug.vim	/^function! s:tick()$/;"	f
@@ -5211,6 +5560,7 @@ timer_start	plugged/vim-go/autoload/go/auto.vim	/^function! s:timer_start()$/;"	
 timer_stop	plugged/vim-go/autoload/go/auto.vim	/^function! s:timer_stop()$/;"	f
 to_a	autoload/plug.vim	/^function! s:to_a(v)$/;"	f
 to_client	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_protocol.py	/^def to_client(msg):$/;"	f
+to_ns	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:to_ns(path) abort$/;"	f
 to_s	autoload/plug.vim	/^function! s:to_s(v)$/;"	f
 toggleFold	plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:toggleFold(fileinfo) abort dict$/;"	f
 toggleIgnoreFilter	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:toggleIgnoreFilter() abort$/;"	f
@@ -5218,13 +5568,20 @@ toggleShowBookmarks	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s
 toggleShowFiles	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:toggleShowFiles() abort$/;"	f
 toggleShowHidden	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:toggleShowHidden() abort$/;"	f
 toggleZoom	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:toggleZoom() abort$/;"	f
+toggle_clojure_highlight_references	plugged/vim-clojure-highlight/plugin/vim_clojure_highlight.vim	/^function! s:toggle_clojure_highlight_references()$/;"	f
 traceback	plugged/deoplete.nvim/rplugin/python3/deoplete/filter/matcher_cpsm.py	/^                import traceback$/;"	i
 traceback	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^import traceback$/;"	i
 traceback	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^        import traceback$/;"	i
 traceback	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^import traceback$/;"	i
+traceback	plugged/vim-fireplace/pythonx/fireplace.py	/^import traceback$/;"	i
 translate_except_expression	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def translate_except_expression(except_expression, input_variables_map, string_literals):$/;"	f
 translate_select_expression	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def translate_select_expression(select_expression):$/;"	f
 translate_update_expression	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^def translate_update_expression(update_expression, input_variables_map, string_literals):$/;"	f
+transport_alive	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:transport_alive() dict abort$/;"	f
+transport_clone	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:transport_clone(...) dict abort$/;"	f
+transport_close	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:transport_close() dict abort$/;"	f
+transport_has_op	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:transport_has_op(op) dict abort$/;"	f
+transport_message	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:transport_message(request, ...) dict abort$/;"	f
 trim	autoload/plug.vim	/^function! s:trim(str)$/;"	f
 trim	plugged/rainbow/autoload/rainbow.vim	/^fun s:trim(s)$/;"	f
 truncate	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^def truncate(string: str, max_width: int) -> str:$/;"	f
@@ -5237,6 +5594,8 @@ try_read_index	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^func! s:try_read_i
 try_read_index	plugged/rainbow_csv/rbql_core/rbql-js/rbql_csv.js	/^function try_read_index(index_path) {$/;"	f
 try_read_index	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^def try_read_index(index_path):$/;"	f
 try_read_lines	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^func! s:try_read_lines(src_path)$/;"	f
+tunnel	plugged/vim-fireplace/pythonx/fireplace.py	/^    def tunnel(self):$/;"	m	class:Connection
+tunnel_socket_to_stdout	plugged/vim-fireplace/pythonx/fireplace.py	/^    def tunnel_socket_to_stdout(self):$/;"	m	class:Connection
 type	plugged/vim-elixir/spec/spec_helper.rb	/^  def type(content)$/;"	f	class:Buffer
 typeDefinitionHandler	plugged/vim-go/autoload/go/lsp.vim	/^function! s:typeDefinitionHandler(next, msg) abort dict$/;"	f
 typing	plugged/deoplete.nvim/rplugin/python3/deoplete/__init__.py	/^import typing$/;"	i
@@ -5275,6 +5634,8 @@ unittest	plugged/rainbow_csv/rbql_core/test/test_csv_utils.py	/^import unittest$
 unnest	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^unnest = UNNEST$/;"	v
 unquote_field	plugged/rainbow_csv/rbql_core/rbql/csv_utils.py	/^def unquote_field(field):$/;"	f
 unquote_fields	plugged/rainbow_csv/rbql_core/rbql/csv_utils.py	/^def unquote_fields(fields):$/;"	f
+unregister	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:unregister(transport) abort$/;"	f
+unregister_dead	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:unregister_dead() abort$/;"	f
 unset	plugged/vim-go/autoload/go/util.vim	/^function! s:unset(name) abort$/;"	f
 upDirCurrentRootClosed	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:upDirCurrentRootClosed() abort$/;"	f
 upDirCurrentRootOpen	plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:upDirCurrentRootOpen() abort$/;"	f
@@ -5297,10 +5658,12 @@ upgrade_specs	autoload/plug.vim	/^function! s:upgrade_specs()$/;"	f
 use_raw_list	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^        if ["%FILE_LIST_CMD_IS_ABSOLUTE%"]==["1"] set use_raw_list=1$/;"	v
 use_raw_list	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^        if ["%PROJECT_ROOT%"]==["."] set use_raw_list=1$/;"	v
 use_raw_list	plugged/vim-gutentags/plat/win32/update_tags.cmd	/^        set use_raw_list=0$/;"	v
+use_system_python	plugged/rainbow_csv/autoload/rainbow_csv.vim	/^func! s:use_system_python()$/;"	f
 user	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import datetime # For date operations inside user queries$/;"	i
 user	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import math # For math operations inside user queries$/;"	i
 user	plugged/rainbow_csv/rbql_core/rbql/rbql_engine.py	/^import os # For system operations inside user queries$/;"	i
 user_home_dir	plugged/rainbow_csv/rbql_core/rbql/rbql_csv.py	/^user_home_dir = os.path.expanduser('~')$/;"	v
+user_ns	plugged/vim-fireplace/autoload/fireplace.vim	/^function! s:user_ns(...) abort$/;"	f
 util	plugged/deoplete.nvim/rplugin/python3/deoplete/util.py	/^import importlib.util$/;"	i
 util	plugged/deoplete.nvim/test/rplugin/python3/deoplete/test_filter.py	/^import deoplete.util as util$/;"	i
 util	plugged/deoplete.nvim/test/rplugin/python3/deoplete/test_util.py	/^import deoplete.util as util$/;"	i
@@ -5313,6 +5676,7 @@ version_requirement	autoload/plug.vim	/^function! s:version_requirement(val, min
 vim	plugged/deoplete.nvim/rplugin/python3/deoplete/__init__.py	/^    import pynvim as vim$/;"	i
 vim	plugged/deoplete.nvim/rplugin/python3/deoplete/__init__.py	/^    import vim$/;"	i
 vim	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^        import vim$/;"	i
+vim	plugged/vim-cljfmt/plugin/cljfmt.vim	/^augroup vim-cljfmt$/;"	a
 vim	plugged/vim-devicons/pythonx/vim_devicons/powerline/segments.py	/^	import vim$/;"	i
 vim	plugged/vim-devicons/pythonx/vim_devicons/powerline/segments.py	/^	vim = {}$/;"	v
 vim	plugged/vim-go/ftplugin/asm.vim	/^augroup vim-go-asm-buffer$/;"	a
@@ -5323,6 +5687,8 @@ vim	plugged/vim-go/syntax/go.vim	/^augroup vim-go-hi$/;"	a
 vim	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_methods.py	/^import vim$/;"	i
 vim	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_protocol.py	/^import vim$/;"	i
 vim	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^import vim$/;"	i
+vim_clojure_highlight	plugged/vim-clojure-highlight/plugin/vim_clojure_highlight.vim	/^augroup vim_clojure_highlight$/;"	a
+vim_clojure_highlight#syntax_match_references	plugged/vim-clojure-highlight/autoload/vim_clojure_highlight.vim	/^function! vim_clojure_highlight#syntax_match_references(...)$/;"	f
 vim_error	plugged/vim-hug-neovim-rpc/pythonx/neovim_rpc_server.py	/^vim_error = vim.Function('neovim_rpc#_error')$/;"	v
 vim_get_func	plugged/vim-devicons/pythonx/vim_devicons/powerline/segments.py	/^from powerline.bindings.vim import (vim_get_func, buffer_name)$/;"	i
 vim_interface	plugged/rainbow_csv/rbql_core/vim_rbql.py	/^vim_interface = None$/;"	v
@@ -5353,6 +5719,7 @@ work	plugged/vim-go/autoload/go/promise_test.vim	/^func! s:work(val, timer)$/;"	
 workspaceFolder	plugged/vim-go/autoload/go/lsp/message.vim	/^function! s:workspaceFolder(key, val) abort$/;"	f
 world	plugged/vim-elixir/spec/indent/def_spec.rb	/^  def world do$/;"	f	class:handle_call.hello
 wrap_cmds	autoload/plug.vim	/^  function! s:wrap_cmds(cmds)$/;"	f
+wrap_nvim_callback	plugged/vim-fireplace/autoload/fireplace/transport.vim	/^function! s:wrap_nvim_callback(cb, buffer, job, msgs, _) abort$/;"	f
 wrapper	plugged/deoplete.nvim/rplugin/python3/deoplete/logger.py	/^    def wrapper(self,  # type: ignore$/;"	f	function:logmethod
 wrapper	plugged/vim-go/autoload/go/promise.vim	/^function! s:wrapper(fn, default, ...) dict$/;"	f
 wraps	plugged/deoplete.nvim/rplugin/python3/deoplete/logger.py	/^from functools import wraps$/;"	i
