@@ -17,7 +17,7 @@ set diffopt+=internal,indent-heuristic,algorithm:patience
 set showcmd
 set clipboard^=unnamed,unnamedplus
 set showmode
-set mouse=n
+set mouse=a
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -66,6 +66,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'tpope/vim-fugitive'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'dyng/ctrlsf.vim'
 
 " language
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -82,12 +84,11 @@ call plug#end()
 " key map 
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
-nnoremap <silent> <leader>f :NERDTreeFind<cr>
+nnoremap <c-p> :call fzf#Open()<cr>
 nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>Q :qa!<CR>
-tnoremap <Esc> <C-\><C-N>:q!<cr>
-nnoremap <silent> <leader>c :call lv#Term()<cr>
+
 
 " plug settings
 let g:rainbow_active=1
